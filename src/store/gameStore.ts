@@ -163,8 +163,9 @@ export const useGame = create<GameState>()(
       setDecor: (o, id, pos) =>
         set((s) => {
           const d = { ...s.decor[o] }
+          // last one placed = last key = drawn on top
+          delete d[id]
           if (pos) d[id] = pos
-          else delete d[id]
           return { decor: { ...s.decor, [o]: d } }
         }),
       resetProgress: () =>

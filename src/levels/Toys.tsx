@@ -1,17 +1,18 @@
 import { useMemo, useRef, useState } from 'react'
 import { motion } from 'motion/react'
-import { Camera } from 'lucide-react'
+import { Camera, Volume2 } from 'lucide-react'
 import { LevelShell } from '../components/LevelShell'
 import { ChoiceActivity, SayItPill, outcomeFor } from '../components/ChoiceActivity'
 import { Balloons, Explore, GiveTo, Memory, NextButton, useFeedback, Dots } from '../components/Activities'
-import { Guide, TrButton, sayLine } from '../components/Guide'
+import { Guide, sayLine } from '../components/Guide'
 import { MicButton } from '../components/Mic'
 import { useScene, useStage } from '../components/Stage'
 import { useGame } from '../store/gameStore'
-import { TY, TOYS, OWNER, SOUND_TILES, demLine, demRounds, ownerRounds, photoRounds, soundRounds, whoseRounds, type Dem, type Owner } from '../content/toys'
+import { TY, TOYS, OWNER, SOUND_TILES, demLine, demRounds, demWhy, ownerRounds, photoRounds, soundRounds, whoseRounds, type Dem, type Owner } from '../content/toys'
 import { img, size } from '../assets/manifest'
-import { PRAISE, plainTr, pick, shuffle } from '../content/lines'
+import { shuffle } from '../content/lines'
 import { word } from '../content/vocab'
+import { DemLesson } from './DemLesson'
 import { sfx } from '../audio/sfx'
 import { say } from '../audio/voice'
 
@@ -35,12 +36,7 @@ export function Toys() {
   )
 }
 
-const DEMS: { d: Dem; en: string; tr: string }[] = [
-  { d: 'this', en: 'near · one', tr: 'yakın · bir tane' },
-  { d: 'these', en: 'near · many', tr: 'yakın · çok' },
-  { d: 'that', en: 'far · one', tr: 'uzak · bir tane' },
-  { d: 'those', en: 'far · many', tr: 'uzak · çok' },
-]
+const DEMS: Dem[] = ['this', 'these', 'that', 'those']
 
 /** Photo time: the same toy is near (table) and far (shelf), one and many. */
 function Photo({ onDone }: { onDone: () => void }) {
@@ -54,6 +50,8 @@ function Photo({ onDone }: { onDone: () => void }) {
   const [misses, setMisses] = useState(0)
   const [shot, setShot] = useState<Dem | null>(null)
   const [flash, setFlash] = useState(0)
+  // Next comes only after the sentence and the praise, so they can never cut off the next instruction
+  const [ready, setReady] = useState(false)
   const busy = useRef(false)
   const r = rounds[i]
   const spots = useMemo(() => {
@@ -67,6 +65,7 @@ function Photo({ onDone }: { onDone: () => void }) {
     if (busy.current) return
     if (d === r.dem) {
       busy.current = true
+      fb.cancel()
       setFlash(Date.now())
       sfx.click()
       sfx.correct()
@@ -74,51 +73,27 @@ function Photo({ onDone }: { onDone: () => void }) {
       record({ level: 'toys', activity: 'photo', skill: 'listening', topic: 'photo-dem', item: r.dem, outcome: outcomeFor(misses, false), misses })
       await say(line.say, 'alya')
       await fb.praise()
+      setReady(true)
       busy.current = false
     } else {
       sfx.tryAgain()
       setMisses((m) => m + 1)
-      fb.tryAgain(misses >= 1 ? TY.photoHint : { ...line.line })
+      fb.tryAgain(misses >= 1 ? { ...line.line } : demWhy[r.dem])
     }
   }
   function next() {
     setShot(null)
+    setReady(false)
     setMisses(0)
     fb.setGuide(null)
     if (i + 1 >= rounds.length) onDone()
     else setI(i + 1)
   }
-  if (teach)
-    return (
-      <div style={{ position: 'absolute', inset: 0 }}>
-        <Guide line={TY.photoTeach[0]} onSpoken={() => sayLine(TY.photoTeach[1])} />
-        <div className="panel" style={{ position: 'absolute', left: P ? 24 : 170, top: P ? 290 : 170, width: P ? 852 : 1260, height: P ? 1100 : 640, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 22 }}>
-          <TrButton lines={TY.photoTeach} style={{ position: 'absolute', top: 18, right: 18 }} />
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 22 }}>
-            {DEMS.map((x) => (
-              <button key={x.d} className="card" onClick={() => say(demLine(x.d, 'robot').say, 'alya')} style={{ width: P ? 400 : 540, height: P ? 400 : 225, display: 'flex', flexDirection: P ? 'column' : 'row', alignItems: 'center', justifyContent: 'center', gap: 20 }}>
-                <span style={{ display: 'flex', alignItems: 'flex-end', width: 190, height: 150, justifyContent: 'center' }}>
-                  {Array.from({ length: x.d === 'this' || x.d === 'that' ? 1 : 3 }).map((_, k) => (
-                    <img key={k} src={img('obj/robot')} alt="" style={{ height: x.d === 'this' ? 145 : x.d === 'these' ? 112 : 62, margin: '0 -4px' }} />
-                  ))}
-                </span>
-                <span style={{ textAlign: 'left' }}>
-                  <span className="title-font" style={{ display: 'block', fontSize: 54, fontWeight: 700, color: '#1f9c9c', lineHeight: 1 }}>{x.d}</span>
-                  <span style={{ display: 'block', fontSize: 27, fontWeight: 700, color: '#4a3a7a' }}>{x.en}</span>
-                  <span style={{ display: 'block', fontSize: 25, fontWeight: 800, color: '#e0709b' }}>{x.tr}</span>
-                </span>
-              </button>
-            ))}
-          </div>
-          <div style={{ fontSize: 26, fontWeight: 800, color: '#e0709b', textAlign: 'center' }}>{TY.photoTeach.map((l) => plainTr(l.tr!)).join('  ')}</div>
-          <NextButton label="Let's go!" onClick={() => setTeach(false)} />
-        </div>
-      </div>
-    )
+  if (teach) return <DemLesson onDone={() => setTeach(false)} />
   return (
     <div style={{ position: 'absolute', inset: 0 }}>
       <Guide line={fb.guide ?? line.line} />
-      {DEMS.map(({ d }) => {
+      {DEMS.map((d) => {
         const [x, y, h0] = spots[d]
         const n = d === 'this' || d === 'that' ? 1 : 3
         // wide toys (camera, tablet) are made smaller so that the groups never overlap
@@ -136,14 +111,21 @@ function Photo({ onDone }: { onDone: () => void }) {
       {!!flash && <motion.div key={flash} initial={{ opacity: 0.95 }} animate={{ opacity: 0 }} transition={{ duration: 0.5 }} style={{ position: 'absolute', inset: 0, background: '#fff', pointerEvents: 'none', zIndex: 50 }} />}
       <div style={{ position: 'absolute', left: 0, right: 0, bottom: 50, display: 'flex', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center', gap: 20 }}>
         {!shot ? (
-          <Camera size={70} color="#fff" style={{ background: '#8a6cc9', borderRadius: 20, padding: 10, border: '4px solid #fff' }} />
+          <button className="card title-font" aria-label="Listen to the sentence" onClick={() => sayLine(line.line)} style={{ fontSize: 40, padding: '10px 30px', fontWeight: 700, color: '#4a3a7a', display: 'flex', alignItems: 'center', gap: 18 }}>
+            <Camera size={58} color="#fff" style={{ background: '#8a6cc9', borderRadius: 16, padding: 8 }} />
+            {line.say}
+            <Volume2 size={40} color="#e0a72e" />
+          </button>
         ) : (
           <>
-            <button className="card title-font" style={{ fontSize: 36, padding: '12px 28px', fontWeight: 600, color: '#4a3a7a' }} onClick={() => say(line.say, 'alya')}>{line.say}</button>
+            <button className="card title-font" style={{ fontSize: 36, padding: '12px 28px', fontWeight: 600, color: '#4a3a7a' }} onClick={() => say(line.say, 'alya')}>
+              {line.say}
+              <span style={{ display: 'block', fontSize: 30, fontWeight: 800, color: '#e0709b', fontFamily: 'var(--font-body)' }}>{line.tr}</span>
+            </button>
             <SayItPill label="Repeat!">
-              <MicButton key={i} spec={{ accept: [line.say] }} level="toys" item={r.dem} size={80} label="" onOutcome={(o) => o.kind === 'correct' && (sfx.correct(), sayLine(pick(PRAISE)))} />
+              <MicButton key={i} spec={{ accept: [line.say] }} level="toys" item={r.dem} size={80} label="" repeat={line.say} />
             </SayItPill>
-            <NextButton onClick={next} />
+            {ready && <NextButton onClick={next} />}
           </>
         )}
       </div>

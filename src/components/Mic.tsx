@@ -1,14 +1,15 @@
-import { useEffect, useState } from 'react'
+import { createContext, useContext, useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { motion } from 'motion/react'
 import { Mic, Loader2, ShieldCheck, MicOff } from 'lucide-react'
 import { listenOnce, recognitionSupported, stopListening, type RecError } from '../speech/recognition'
 import { matchSpeech, type MatchOutcome, type SpeakSpec } from '../speech/match'
-import { stopVoice } from '../audio/voice'
+import { say, stopVoice, type VoiceId } from '../audio/voice'
 import { sfx, restoreAudioAfterMic } from '../audio/sfx'
 import { useGame, type LevelId } from '../store/gameStore'
 import { sayLine } from './Guide'
-import { UI } from '../content/lines'
+import { SAID, UI, pick } from '../content/lines'
+import { ALMOST } from '../content/ui'
 
 export type MicOutcome = { kind: MatchOutcome; heard: string } | { kind: 'error'; error: RecError }
 
@@ -88,6 +89,25 @@ export function MicConsent({ onClose }: { onClose: (ok: boolean) => void }) {
   )
 }
 
+/** true inside the pink bubble: the result gets its own line there and never covers other buttons */
+export const InPill = createContext(false)
+
+/** What the microphone understood: green = correct, orange = try again. */
+export function MicResult({ kind, heard, text, tr, target }: { kind: 'good' | 'almost' | 'info'; heard?: string; text: string; tr?: string; target?: string }) {
+  const c = kind === 'good' ? { bg: '#e0f7e8', line: '#3fae6a', ink: '#1f7a45' } : kind === 'almost' ? { bg: '#fff0de', line: '#f0973c', ink: '#9a5312' } : { bg: '#fff', line: '#e3d8f5', ink: '#7a4a62' }
+  return (
+    <motion.div data-testid={'mic-' + kind} initial={{ scale: 0.8 }} animate={{ scale: 1 }} style={{ order: 4, flex: '1 0 100%', boxSizing: 'border-box', minWidth: 260, maxWidth: '100%', textAlign: 'center', background: c.bg, border: `4px solid ${c.line}`, borderRadius: 18, padding: '5px 14px', lineHeight: 1.2 }}>
+      <div className="title-font" style={{ fontSize: kind === 'good' ? 32 : 24, fontWeight: 700, color: c.ink }}>
+        {kind === 'good' ? '✓ ' : ''}
+        {text}
+      </div>
+      {tr && <div style={{ fontSize: 22, fontWeight: 800, color: '#c9446f' }}>{tr}</div>}
+      {heard && <div style={{ fontSize: 20, fontWeight: 700, color: c.ink }}>{kind === 'good' ? `“${heard}”` : `I heard: “${heard}”`}</div>}
+      {target && kind === 'almost' && <div style={{ fontSize: 20, fontWeight: 800, color: '#4a3a7a' }}>Say: “{target}”</div>}
+    </motion.div>
+  )
+}
+
 export function MicButton({
   spec,
   level,
@@ -96,11 +116,19 @@ export function MicButton({
   size = 110,
   disabled,
   label = 'Say it!',
+  repeat,
+  repeatVoice = 'alya',
+  partialOk = false,
 }: {
   spec: SpeakSpec
   level: LevelId
   item: string
-  onOutcome: (o: MicOutcome) => void
+  onOutcome?: (o: MicOutcome) => void
+  /** repeat-after-me use: the sentence to say. The button then praises / helps by itself before onOutcome. */
+  repeat?: string
+  repeatVoice?: VoiceId
+  /** the key word alone is enough */
+  partialOk?: boolean
   size?: number
   disabled?: boolean
   label?: string
@@ -108,9 +136,17 @@ export function MicButton({
   const micEnabled = useGame((s) => s.settings.micEnabled)
   const recordSpeech = useGame((s) => s.recordSpeech)
   const [state, setState] = useState<'idle' | 'listening' | 'processing'>('idle')
-  const [msg, setMsg] = useState<string | null>(null)
+  const [msg, setMsg] = useState<Parameters<typeof MicResult>[0] | null>(null)
+  const inPill = useContext(InPill)
+  const alive = useRef(true)
   const [consent, setConsent] = useState(false)
-  useEffect(() => () => stopListening(), [])
+  useEffect(() => {
+    alive.current = true
+    return () => {
+      alive.current = false
+      stopListening()
+    }
+  }, [])
 
   async function run(force = false) {
     if (state !== 'idle') {
@@ -118,8 +154,8 @@ export function MicButton({
       return
     }
     if (!recognitionSupported()) {
-      setMsg(ERROR_TEXT.unsupported)
-      onOutcome({ kind: 'error', error: 'unsupported' })
+      setMsg({ kind: 'info', text: ERROR_TEXT.unsupported })
+      onOutcome?.({ kind: 'error', error: 'unsupported' })
       return
     }
     if (!micEnabled && !force) {
@@ -134,25 +170,40 @@ export function MicButton({
     setState('processing')
     await new Promise((r) => setTimeout(r, 350))
     restoreAudioAfterMic()
+    // the child has already gone on: never talk over the next question
+    if (!alive.current) return
     setState('idle')
     if (!res.ok) {
       recordSpeech({ level, item, result: 'error', heard: res.error })
-      setMsg(ERROR_TEXT[res.error])
+      setMsg({ kind: 'info', text: ERROR_TEXT[res.error] })
       if (res.error === 'no-speech' || res.error === 'timeout') sayLine(UI.noHear)
-      onOutcome({ kind: 'error', error: res.error })
+      onOutcome?.({ kind: 'error', error: res.error })
       return
     }
     const m = matchSpeech(res.alternatives, spec)
     recordSpeech({ level, item, result: m.outcome, heard: m.heard })
-    setMsg(m.heard ? `I heard: “${m.heard}”` : null)
+    const good = m.outcome === 'correct' || (partialOk && m.outcome === 'partial')
+    if (good) setMsg({ kind: 'good', text: 'Correct!', tr: 'Doğru!', heard: m.heard })
+    else if (m.outcome === 'unclear') setMsg({ kind: 'info', text: ERROR_TEXT['no-speech'] })
+    else if (m.outcome === 'partial') setMsg({ kind: 'almost', text: 'Good! Say the whole sentence.', tr: 'Güzel! Cümlenin tamamını söyle.', heard: m.heard, target: repeat })
+    else setMsg({ kind: 'almost', text: 'Try again!', tr: 'Tekrar dene!', heard: m.heard, target: repeat })
     if (m.outcome === 'unclear') sayLine(UI.noHear)
-    onOutcome({ kind: m.outcome, heard: m.heard })
+    else if (repeat && good) {
+      sfx.correct()
+      await sayLine(pick(SAID))
+      if (!alive.current) return
+    } else if (repeat) {
+      const ok = await sayLine(m.outcome === 'partial' ? UI.wholeSentence : ALMOST)
+      if (ok && alive.current) await say(repeat, repeatVoice)
+      if (!alive.current) return
+    }
+    onOutcome?.({ kind: m.outcome, heard: m.heard })
   }
 
   const listening = state === 'listening'
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6, position: 'relative' }}>
-      <div style={{ position: 'relative', width: size, height: size }}>
+    <div style={inPill ? { display: 'contents' } : { display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6, position: 'relative', maxWidth: 420 }}>
+      <div style={{ position: 'relative', width: size, height: size, flex: 'none' }}>
         {listening && <span className="mic-ring" style={{ position: 'absolute', inset: 0, borderRadius: '50%', background: '#f4b7cc' }} />}
         <motion.button
           className={`btn ${listening ? 'btn-pink' : 'btn-teal'}`}
@@ -166,14 +217,12 @@ export function MicButton({
           {state === 'processing' ? <Loader2 size={size * 0.45} className="spin-slow" /> : micEnabled || !recognitionSupported() ? recognitionSupported() ? <Mic size={size * 0.48} /> : <MicOff size={size * 0.45} /> : <Mic size={size * 0.48} />}
         </motion.button>
       </div>
-      <div className="title-font" style={{ fontSize: 22, fontWeight: 600, color: '#4a3a7a' }}>
+      {(label || state !== 'idle') && (
+        <div className="title-font" style={{ fontSize: 22, fontWeight: 600, color: '#4a3a7a', order: inPill ? 4 : undefined, flex: inPill ? '1 0 100%' : undefined, textAlign: 'center' }}>
         {listening ? 'Listening… speak now!' : state === 'processing' ? 'Checking…' : label}
-      </div>
-      {msg && (
-        <div style={{ position: 'absolute', top: size + 34, width: 420, textAlign: 'center', fontSize: 20, fontWeight: 700, color: '#7a4a62', background: 'rgba(255,255,255,0.92)', borderRadius: 14, padding: '6px 10px', zIndex: 5 }}>
-          {msg}
         </div>
       )}
+      {msg && state === 'idle' && <MicResult {...msg} />}
       {consent && (
         <MicConsent
           onClose={(ok) => {

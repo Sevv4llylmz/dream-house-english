@@ -6,8 +6,8 @@ import { Character } from '../components/Character'
 import { Guide, TrButton, sayLine } from '../components/Guide'
 import { TopButton } from '../components/LevelShell'
 import { OptionButton, VisualView, outcomeFor } from '../components/ChoiceActivity'
-import { SentenceBuilder } from '../components/SentenceBuilder'
-import { MicButton, type MicOutcome } from '../components/Mic'
+import { BuiltTr, SentenceBuilder } from '../components/SentenceBuilder'
+import { InPill, MicButton, type MicOutcome } from '../components/Mic'
 import { Confetti, StarBurst, TrophyArt } from '../components/Effects'
 import { wait } from '../components/Activities'
 import { img } from '../assets/manifest'
@@ -15,7 +15,7 @@ import { useGame, reviewKeys } from '../store/gameStore'
 import { levelMeta } from '../content/meta'
 import { SETS, V, WIN, passRound, spikes, type SetItem } from '../content/volley'
 import { ALL_WORDS } from '../content/vocab'
-import { PRAISE, UI, named, pick, plainTr, shuffle, type Line } from '../content/lines'
+import { PRAISE, SAID, UI, named, pick, plainTr, shuffle, type Line } from '../content/lines'
 import type { ChoiceRound, Option } from '../content/types'
 import { sfx } from '../audio/sfx'
 import { say, stopVoice } from '../audio/voice'
@@ -139,7 +139,7 @@ export function Volley() {
       set({ teacher: 'ready' })
       if (!alive.current) return
       // 1 pass
-      if ((await question({ kind: 'pass', round: take('pass') as ChoiceRound }, V.pass)) === 'wrong') {
+      if ((await question({ kind: 'pass', round: take('pass') as ChoiceRound }, V.passText)) === 'wrong') {
         await lose(hit.a)
         continue
       }
@@ -315,9 +315,10 @@ function Question({ q, setGuide, onMood, onResult }: { q: Q; setGuide: (l: Line)
   useEffect(() => {
     let on = true
     ;(async () => {
-      await sayLine(q.kind === 'pass' ? V.pass : q.kind === 'set' ? V.set : V.spike)
+      // pass: only the word itself, nothing before it
+      if (q.kind !== 'pass') await sayLine(q.kind === 'set' ? V.set : V.spike)
       if (!on || done.current) return
-      setGuide(q.kind === 'pass' ? V.pass : prompt)
+      setGuide(q.kind === 'pass' ? V.passText : prompt)
       await sayLine(prompt)
       if (on && !done.current && q.kind === 'set') await say(q.item.say, 'alya')
     })()
@@ -327,15 +328,16 @@ function Question({ q, setGuide, onMood, onResult }: { q: Q; setGuide: (l: Line)
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  async function right(text?: string) {
+  async function right(text?: string, byVoice = false) {
     if (done.current) return
     done.current = true
     sfx.correct()
     record({ level: 'volley', activity: 'match', ...meta, outcome: outcomeFor(0, false), misses: 0 })
     if (text) await say(text, 'alya')
-    const p = pick(PRAISE)
+    const p = pick(byVoice ? SAID : PRAISE)
     setGuide(p)
     await sayLine(p)
+    if (q.kind === 'set') await wait(900)
     onResult('right')
   }
   async function miss(id: string) {
@@ -368,13 +370,16 @@ function Question({ q, setGuide, onMood, onResult }: { q: Q; setGuide: (l: Line)
 
   if (q.kind === 'set')
     return shown ? (
-      <div className="card is-correct title-font" style={{ fontSize: 42, fontWeight: 700, color: '#4a3a7a', padding: '12px 30px' }}>{q.item.say} ✓</div>
+      <div style={{ display: 'grid', gap: 14, justifyItems: 'center' }}>
+        <div className="card is-correct title-font" style={{ fontSize: 42, fontWeight: 700, color: '#4a3a7a', padding: '12px 30px' }}>{q.item.say} ✓</div>
+        <BuiltTr tr={q.item.line.tr!} size={38} />
+      </div>
     ) : (
       <div style={{ display: 'flex', flexDirection: P ? 'column' : 'row', alignItems: 'center', gap: 20 }}>
         <button className="btn btn-sun" aria-label="Listen" onClick={() => say(q.item.say, 'alya')} style={{ width: 76, height: 76, display: 'grid', placeItems: 'center', flex: 'none' }}>
           <Volume2 size={38} />
         </button>
-        <SentenceBuilder compact words={q.item.words} onMiss={() => miss('order')} onSolved={() => right(q.item.say)} />
+        <SentenceBuilder compact tr={q.item.line.tr} words={q.item.words} onMiss={() => miss('order')} onSolved={() => right(q.item.say)} />
       </div>
     )
 
@@ -397,7 +402,7 @@ function Question({ q, setGuide, onMood, onResult }: { q: Q; setGuide: (l: Line)
     if (done.current) return
     if (o.kind === 'correct') {
       setGuide(UI.recognized)
-      right()
+      right(undefined, true)
     } else if (o.kind === 'partial') {
       setGuide(UI.wholeSentence)
       sayLine(UI.wholeSentence)
@@ -408,7 +413,7 @@ function Question({ q, setGuide, onMood, onResult }: { q: Q; setGuide: (l: Line)
   }
   return (
     <div style={{ display: 'flex', flexDirection: P ? 'column' : 'row', alignItems: 'center', justifyContent: 'center', gap: P ? 10 : 24, width: '100%' }}>
-      <VisualView visual={r.visual?.type === 'object' ? undefined : r.visual} width={P ? 380 : 392} />
+      <VisualView visual={r.visual?.type === 'object' ? undefined : r.visual} width={P ? 310 : 392} />
       {manual ? (
         <div style={{ display: 'flex', flexDirection: 'column', gap: 6, width: P ? 640 : 560 }}>
           {options.map((o) => (
@@ -426,9 +431,13 @@ function Question({ q, setGuide, onMood, onResult }: { q: Q; setGuide: (l: Line)
           ))}
         </div>
       ) : (
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 8 }}>
-          <div className="title-font" style={{ fontSize: 30, fontWeight: 700, color: '#4a3a7a', textAlign: 'center' }}>{r.prompt.en}</div>
-          <MicButton spec={r.speak!} level="volley" item={r.id} size={92} label="Say it!" onOutcome={onMic} />
+        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center', gap: P ? '10px 18px' : '6px 18px', width: P ? 700 : 600 }}>
+          <div className="title-font" style={{ flex: '1 0 100%', fontSize: P ? 30 : 27, fontWeight: 700, color: '#4a3a7a', textAlign: 'center', lineHeight: 1.1 }}>{r.prompt.en}</div>
+          {/* the result gets its own line, so nothing is pushed out of the card */}
+          <InPill.Provider value={true}>
+            <span className="title-font" style={{ fontSize: 26, fontWeight: 600, color: '#8a3a5c' }}>Say it!</span>
+            <MicButton spec={r.speak!} level="volley" item={r.id} size={78} label="" onOutcome={onMic} />
+          </InPill.Provider>
           <button className="title-font" onClick={() => setManual(true)} style={{ background: '#fff', border: '3px solid #e3d8f5', borderRadius: 16, padding: '4px 18px', fontSize: 21, color: '#4a3a7a', cursor: 'pointer' }}>
             Tap the answer instead
           </button>

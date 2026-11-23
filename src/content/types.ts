@@ -16,11 +16,15 @@ export interface SceneItem {
   /** draw again only the part below this fraction (the front of an open box) */
   front?: number
   glow?: boolean
+  /** squash: a thing that lies flat on a table */
+  sy?: number
+  /** dark edge, so it can be seen on a surface of the same colour */
+  edge?: boolean
 }
 
 export type Visual =
   | { type: 'object'; pic: PicRef }
-  | { type: 'scene'; items: SceneItem[]; bg?: BgKey; caption?: string }
+  | { type: 'scene'; items: SceneItem[]; bg?: BgKey; caption?: string; captionDone?: string; captionTr?: string }
   | { type: 'listen' }
   | { type: 'text'; text: string }
   | { type: 'person'; who: 'teacher' | 'mia' | 'leo' | 'alya'; pose: string }

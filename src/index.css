@@ -32,6 +32,8 @@ body,
   -webkit-user-select: none;
 }
 
+button { font-family: inherit; }
+
 /* ---------- reusable UI pieces (stage pixels: the stage is 1600x900 and scaled) ---------- */
 .btn {
   font-family: var(--font-display);

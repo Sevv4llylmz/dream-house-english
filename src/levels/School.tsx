@@ -9,7 +9,6 @@ import { useStage } from '../components/Stage'
 import { useGame } from '../store/gameStore'
 import { SC, DIFF_ITEMS, DIFF_ROUNDS, diffLines, diffSay, isThereRounds, manyRounds, numberRounds } from '../content/school'
 import { SCHOOL } from '../content/vocab'
-import { PRAISE, pick } from '../content/lines'
 import { sfx } from '../audio/sfx'
 import { say } from '../audio/voice'
 
@@ -74,12 +73,12 @@ function Differences({ onDone }: { onDone: () => void }) {
           </div>
         ))}
       </div>
-      <div style={{ position: 'absolute', left: 0, right: 0, top: P ? 1200 : 650, display: 'flex', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center', gap: 22 }}>
+      <div style={{ position: 'absolute', left: 0, right: 0, top: P ? 1200 : 622, display: 'flex', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center', gap: 22 }}>
         {last && (
           <>
             <button className="card title-font" style={{ fontSize: 34, padding: '14px 28px', fontWeight: 600, color: '#4a3a7a' }} onClick={() => say(diffSay[last], 'alya')}>{diffSay[last]}</button>
             <SayItPill label="Repeat!">
-              <MicButton key={last} spec={{ accept: [diffSay[last], diffSay[last].replace('.', ' in picture two')] }} level="school" item={last} size={84} label="" onOutcome={(o) => o.kind === 'correct' && (sfx.correct(), sayLine(pick(PRAISE)))} />
+              <MicButton key={last} spec={{ accept: [diffSay[last], diffSay[last].replace('.', ' in picture two')] }} level="school" item={last} size={84} label="" repeat={diffSay[last]} />
             </SayItPill>
           </>
         )}

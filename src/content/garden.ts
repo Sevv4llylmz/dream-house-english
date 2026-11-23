@@ -58,9 +58,11 @@ export const findRounds: ChoiceRound[] = [
 const put = (s: string) => L(`Put the cat ${SPOTS[s].en}!`, `Kediyi ${SPOTS[s].trTo} koy!`)
 export const hideRounds: { spot: Spot; line: Line }[] = (['under-table', 'in-box', 'on-chair', 'on-table', 'under-chair'] as Spot[]).map((s) => ({ spot: s, line: put(s) }))
 
-export const askItems: { words: string[]; say: string; reply: Line; spot: Spot }[] = (['on-bed', 'under-chair', 'in-box'] as Spot[]).map((s) => ({
+export const askItems: { words: string[]; say: string; tr: string; reply: Line; replySay: string; spot: Spot }[] = (['on-bed', 'under-chair', 'in-box'] as Spot[]).map((s) => ({
   words: ['Where', 'is', 'the', 'cat', '?'],
   say: A('Where is the cat?'),
+  tr: 'Kedi nerede?',
+  replySay: itIs(s),
   reply: L(`It's ${SPOTS[s].en}!`, `${trCap(SPOTS[s].tr)}!`),
   spot: s,
 }))

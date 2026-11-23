@@ -3,7 +3,7 @@ import { Volume2 } from 'lucide-react'
 import { LevelShell } from '../components/LevelShell'
 import { ChoiceActivity, SayItPill, outcomeFor } from '../components/ChoiceActivity'
 import { BuildAsk, NextButton, useFeedback, Dots } from '../components/Activities'
-import { Guide, TrButton, sayLine } from '../components/Guide'
+import { Guide, TrButton } from '../components/Guide'
 import { Item, Pic, Scene } from '../components/Pic'
 import { MicButton } from '../components/Mic'
 import { DragArea, Draggable, DropZone } from '../components/Drag'
@@ -11,8 +11,6 @@ import { StarBurst } from '../components/Effects'
 import { useStage } from '../components/Stage'
 import { useGame } from '../store/gameStore'
 import { G, PREPS, SPOTS, askItems, catAt, findRounds, hideRounds, itIs } from '../content/garden'
-import { PRAISE, pick } from '../content/lines'
-import { REPEAT } from '../content/ui'
 import type { SceneItem } from '../content/types'
 import type { Spot } from '../content/vocab'
 import { sfx } from '../audio/sfx'
@@ -52,7 +50,7 @@ function Learn({ onDone }: { onDone: () => void }) {
             <Volume2 size={28} /> {itIs(p.spot)}
           </button>
           <SayItPill label="Repeat!">
-            <MicButton key={p.id} spec={{ accept: [itIs(p.spot), p.id], rivals: PREPS.filter((x) => x.id !== p.id).map((x) => x.id) }} level="garden" item={p.id} size={84} label="" onOutcome={(o) => (o.kind === 'correct' ? (sfx.correct(), sayLine(pick(PRAISE))) : o.kind === 'other-answer' && sayLine(REPEAT))} />
+            <MicButton key={p.id} spec={{ accept: [itIs(p.spot), p.id], rivals: PREPS.filter((x) => x.id !== p.id).map((x) => x.id) }} level="garden" item={p.id} size={84} label="" repeat={itIs(p.spot)} />
           </SayItPill>
           <NextButton onClick={() => (i + 1 < PREPS.length ? setI(i + 1) : onDone())} />
         </div>
@@ -95,6 +93,7 @@ function Hide({ onDone }: { onDone: () => void }) {
         if (busy.current) return false
         if (target === r.spot) {
           busy.current = true
+          fb.cancel()
           setPlaced(r.spot)
           setBurst(Date.now())
           sfx.drop()

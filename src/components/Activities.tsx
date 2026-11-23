@@ -1,18 +1,18 @@
 import { useMemo, useRef, useState, type ReactNode } from 'react'
 import { motion } from 'motion/react'
-import { ArrowRight, Star, Volume2 } from 'lucide-react'
+import { ArrowRight, Check, Star, Volume2 } from 'lucide-react'
 import { Guide, TrButton, sayLine } from './Guide'
 import { Pic, Scene } from './Pic'
 import { Character } from './Character'
 import { MicButton } from './Mic'
 import { DragArea, Draggable, DropZone } from './Drag'
-import { SentenceBuilder } from './SentenceBuilder'
+import { BuiltTr, SentenceBuilder } from './SentenceBuilder'
 import { SayItPill, outcomeFor } from './ChoiceActivity'
 import { Confetti, StarBurst } from './Effects'
 import { useStage } from './Stage'
 import { useGame, type LevelId, type Skill } from '../store/gameStore'
 import { PRAISE, TRY, pick, shuffle, type Line } from '../content/lines'
-import { EXPLORE_DONE, REPEAT } from '../content/ui'
+import { ASK_NOW, EXPLORE_DONE } from '../content/ui'
 import { itIsSpec, word, type Word } from '../content/vocab'
 import type { SceneItem } from '../content/types'
 import type { BalloonRound } from '../content/school'
@@ -28,10 +28,17 @@ export const NextButton = ({ onClick, style, label = 'Next' }: { onClick: () => 
 )
 /** praise / try again lines, spoken and shown */
 export function useFeedback() {
-  const [guide, setGuide] = useState<Line | null>(null)
+  const [guide, setG] = useState<Line | null>(null)
+  // a newer line always wins: an old hint that was cut off must not come back over the next question
+  const turn = useRef(0)
+  const setGuide = (l: Line | null) => {
+    turn.current++
+    setG(l)
+  }
   return {
     guide,
     setGuide,
+    cancel: () => void turn.current++,
     async praise(line?: Line) {
       const p = line ?? pick(PRAISE)
       setGuide(p)
@@ -40,8 +47,9 @@ export function useFeedback() {
     async tryAgain(then: Line) {
       const t = pick(TRY)
       setGuide(t)
+      const my = turn.current
       await sayLine(t)
-      setGuide(then)
+      if (my === turn.current) setGuide(then)
     },
   }
 }
@@ -54,6 +62,7 @@ function useRecord(level: LevelId) {
 export function Explore({ words, level, lead, onDone }: { words: Word[]; level: LevelId; lead: Line; onDone: () => void }) {
   const { portrait: P } = useStage()
   const [seen, setSeen] = useState<string[]>([])
+  const [said, setSaid] = useState<string[]>([])
   const [cur, setCur] = useState<Word | null>(null)
   const [guide, setGuide] = useState<Line>(lead)
   return (
@@ -72,8 +81,9 @@ export function Explore({ words, level, lead, onDone }: { words: Word[]; level: 
               setSeen((s) => (s.includes(w.id) ? s : [...s, w.id]))
               setGuide({ ...w.intro })
             }}
-            style={{ width: P ? 262 : 250, height: P ? 250 : 210, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 4 }}
+            style={{ width: P ? 262 : 250, height: P ? 250 : 210, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 4, position: 'relative' }}
           >
+            {said.includes(w.id) && <SaidTick />}
             <Pic pic={w.pic} size={P ? 160 : 132} />
             <span className="title-font" style={{ fontSize: 30, fontWeight: 600, color: seen.includes(w.id) ? '#1f9c9c' : '#c9bfe0' }}>{seen.includes(w.id) ? w.en : '?'}</span>
           </motion.button>
@@ -84,7 +94,7 @@ export function Explore({ words, level, lead, onDone }: { words: Word[]; level: 
           <Star size={30} color="#e0a72e" fill="#f7d77b" /> {seen.length} / {words.length}
         </div>
         {cur && (
-          <div className="panel" style={{ width: P ? 800 : 390, padding: 18, display: 'flex', flexDirection: P ? 'row' : 'column', alignItems: 'center', justifyContent: 'center', gap: 14, position: 'relative' }}>
+          <div className="panel" style={{ width: P ? 800 : 390, boxSizing: 'border-box', padding: 18, display: 'flex', flexDirection: P ? 'row' : 'column', alignItems: 'center', justifyContent: 'center', gap: 14, position: 'relative' }}>
             <button className="btn btn-sun title-font" style={{ fontSize: 28, padding: '10px 20px', display: 'flex', alignItems: 'center', gap: 8 }} onClick={() => say(cur.itIs, 'alya')}>
               <Volume2 size={26} /> {cur.itIs}
             </button>
@@ -96,12 +106,9 @@ export function Explore({ words, level, lead, onDone }: { words: Word[]; level: 
               item={cur.id}
               size={92}
               label="Repeat!"
-              onOutcome={(o) => {
-                if (o.kind === 'correct' || o.kind === 'partial') {
-                  sfx.correct()
-                  sayLine(pick(PRAISE))
-                } else if (o.kind === 'other-answer') sayLine(REPEAT)
-              }}
+              repeat={cur.itIs}
+              partialOk
+              onOutcome={(o) => (o.kind === 'correct' || o.kind === 'partial') && setSaid((s) => (s.includes(cur.id) ? s : [...s, cur.id]))}
             />
           </div>
         )}
@@ -119,9 +126,16 @@ export function Explore({ words, level, lead, onDone }: { words: Word[]; level: 
   )
 }
 
+/** green tick on a card: this word was said correctly */
+const SaidTick = () => (
+  <motion.span initial={{ scale: 0 }} animate={{ scale: 1 }} aria-label="said" style={{ position: 'absolute', top: 8, right: 8, width: 48, height: 48, borderRadius: '50%', background: '#3fae6a', border: '4px solid #fff', display: 'grid', placeItems: 'center', boxShadow: '0 3px 8px rgba(0,0,0,.2)' }}>
+    <Check size={30} color="#fff" strokeWidth={4} />
+  </motion.span>
+)
+
 // ------------------------------------------------------------------ balloons
 const BCOL = ['#c08be0', '#40c9c6', '#f5a6c3', '#f7cf5e', '#8fb4f0']
-export function Balloons({ rounds, level, activity, tiles, onDone }: { rounds: BalloonRound[]; level: LevelId; activity: string; tiles?: Record<string, string>; onDone: () => void }) {
+export function Balloons({ rounds, level, activity, tiles, onDone }: { rounds: BalloonRound[]; level: LevelId; activity: string; tiles?: Record<string, [string, boolean][]>; onDone: () => void }) {
   const { portrait: P, W, H } = useStage()
   const rec = useRecord(level)
   const fb = useFeedback()
@@ -135,6 +149,7 @@ export function Balloons({ rounds, level, activity, tiles, onDone }: { rounds: B
     if (busy.current) return
     if (id === r.id) {
       busy.current = true
+      fb.cancel()
       setPopped(id)
       sfx.pop()
       sfx.correct()
@@ -185,7 +200,7 @@ export function Balloons({ rounds, level, activity, tiles, onDone }: { rounds: B
             <span className="title-font" style={{ position: 'absolute', inset: '0 0 75px', display: 'grid', placeItems: 'center', fontSize: 84, fontWeight: 700, color: isPop ? '#1f9c9c' : '#fff', textShadow: isPop ? 'none' : '0 4px 0 rgba(60,30,90,0.3)' }}>
               {o.label ?? <Pic pic={o.pic!} size={118} />}
             </span>
-            {isPop && tiles && <span className="title-font panel" style={{ position: 'absolute', bottom: 0, left: -20, right: -20, fontSize: 44, fontWeight: 700, color: '#6a4fa3', padding: '2px 0' }}>{tiles[o.id].replace(/·/g, ' · ')}</span>}
+            {isPop && tiles && <span className="title-font panel" style={{ position: 'absolute', bottom: 0, left: -20, right: -20, fontSize: 44, fontWeight: 700, color: '#6a4fa3', padding: '2px 0' }}>{tiles[o.id].map(([x, on], t) => <span key={t} style={on ? { color: '#e0709b' } : undefined}>{x}</span>)}</span>}
           </motion.button>
         )
       })}
@@ -202,33 +217,67 @@ export const Dots = ({ n, i }: { n: number; i: number }) => (
 )
 
 // ------------------------------------------------------------------ build a question, then the teacher answers
-export function BuildAsk({ items, level, lead, hint, onDone }: { items: { words: string[]; say: string; reply: Line; scene: SceneItem[] }[]; level: LevelId; lead: Line; hint: Line; onDone: () => void }) {
+export function BuildAsk({ items, level, lead, hint, onDone }: { items: { words: string[]; say: string; tr: string; reply: Line; replySay: string; scene: SceneItem[] }[]; level: LevelId; lead: Line; hint: Line; onDone: () => void }) {
   const { portrait: P } = useStage()
   const rec = useRecord(level)
   const fb = useFeedback()
   const [i, setI] = useState(0)
   const [misses, setMisses] = useState(0)
-  const [answered, setAnswered] = useState(false)
+  // 1 build the question, 2 ask it aloud, 3 the teacher answers and the picture opens
+  const [stage, setStage] = useState<'build' | 'say' | 'reply'>('build')
   const it = items[i]
   async function next() {
-    setAnswered(false)
+    setStage('build')
     setMisses(0)
     if (i + 1 >= items.length) return onDone()
     setI(i + 1)
     fb.setGuide({ ...lead })
   }
+  const replyNow = () => {
+    setStage('reply')
+    fb.setGuide({ ...it.reply })
+  }
+  const sentence = (text: string, tr: string) => (
+    <div style={{ textAlign: 'center' }}>
+      <button className="btn btn-sun title-font" style={{ fontSize: 44, padding: '10px 34px', display: 'inline-flex', alignItems: 'center', gap: 14 }} onClick={() => say(text, 'alya')}>
+        <Volume2 size={38} /> {text}
+      </button>
+      <div style={{ height: 10 }} />
+      <BuiltTr tr={tr} size={38} />
+    </div>
+  )
   return (
     <div style={{ position: 'absolute', inset: 0 }}>
       <Guide line={fb.guide ?? lead} />
       <div className="panel" style={{ position: 'absolute', left: P ? 24 : 120, top: P ? 290 : 165, width: P ? 852 : 1360, height: P ? 1080 : 650, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 18 }}>
-        {answered ? (
-          <>
-            <Scene items={it.scene} width={P ? 760 : 640} />
-            <SayItPill label="Now you ask!">
-              <MicButton spec={{ accept: [it.say.replace(/[?.]/g, '')] }} level={level} item="question" size={84} label="" onOutcome={(o) => o.kind === 'correct' && (sfx.correct(), sayLine(it.reply))} />
-            </SayItPill>
-            <NextButton onClick={next} />
-          </>
+        {stage === 'reply' ? (
+          <div style={{ display: 'flex', flexDirection: P ? 'column' : 'row', alignItems: 'center', gap: 34 }}>
+            <Scene items={it.scene} width={P ? 720 : 640} />
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 20, width: P ? 760 : 580 }}>
+              {sentence(it.replySay, it.reply.tr!)}
+              <SayItPill label="Repeat!">
+                <MicButton key={'r' + i} spec={{ accept: [it.replySay] }} level={level} item="answer" size={84} label="" repeat={it.replySay} />
+              </SayItPill>
+              <NextButton onClick={next} />
+            </div>
+          </div>
+        ) : stage === 'say' ? (
+          <div style={{ display: 'flex', flexDirection: P ? 'column' : 'row', alignItems: 'center', gap: 40 }}>
+            <div style={{ position: 'relative', width: 270, height: P ? 330 : 470 }}>
+              <Character who="teacher" pose="think" height={P ? 320 : 450} style={{ left: P ? 40 : 0, bottom: 0 }} />
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 20, width: P ? 780 : 860 }}>
+              <div style={{ textAlign: 'center' }}>
+                <div className="title-font" style={{ fontSize: 40, fontWeight: 700, color: '#4a3a7a' }}>Now you ask me!</div>
+                <div style={{ fontSize: 30, fontWeight: 800, color: '#e0709b' }}>Mikrofona dokun ve bu soruyu öğretmene sor:</div>
+              </div>
+              {sentence(it.say, it.tr)}
+              <SayItPill label="Ask!">
+                <MicButton key={'q' + i} spec={{ accept: [it.say] }} level={level} item="question" size={92} label="" repeat={it.say} onOutcome={(o) => o.kind === 'correct' && replyNow()} />
+              </SayItPill>
+              <NextButton onClick={replyNow} />
+            </div>
+          </div>
         ) : (
           <>
             <div style={{ position: 'relative', width: 260, height: P ? 330 : 250 }}>
@@ -237,17 +286,19 @@ export function BuildAsk({ items, level, lead, hint, onDone }: { items: { words:
             <SentenceBuilder
               key={i}
               words={it.words}
+              tr={it.tr}
               onMiss={(m) => {
                 setMisses(m)
                 fb.tryAgain(hint)
               }}
               onSolved={async () => {
+                fb.cancel()
                 sfx.correct()
                 rec('ask', 'questions', 'grammar', it.words.join(' '), misses)
                 await say(it.say, 'alya')
-                setAnswered(true)
-                fb.setGuide(it.reply)
-                await sayLine(it.reply)
+                await wait(900)
+                setStage('say')
+                fb.setGuide({ ...ASK_NOW })
               }}
             />
           </>
@@ -285,6 +336,7 @@ export function GiveTo({ rounds, owners, level, activity, topic, hint, header, o
         if (busy.current) return false
         if (item === r.id && target === r.owner) {
           busy.current = true
+          fb.cancel()
           sfx.drop()
           sfx.correct()
           rec(activity, topic, 'listening', r.id, misses)

@@ -2,12 +2,12 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import { AnimatePresence, motion } from 'motion/react'
 import { Volume2, ArrowRight } from 'lucide-react'
 import type { ChoiceRound, Option, Visual } from '../content/types'
-import { PRAISE, TRY, UI, pick, shuffle, plainTr, type Line } from '../content/lines'
+import { PRAISE, SAID, TRY, UI, pick, shuffle, plainTr, type Line } from '../content/lines'
 import { REVEAL } from '../content/ui'
 import { Guide, sayLine, TrButton } from './Guide'
 import { Pic, Scene } from './Pic'
 import { Character } from './Character'
-import { MicButton, type MicOutcome } from './Mic'
+import { InPill, MicButton, MicResult, type MicOutcome } from './Mic'
 import { normalize } from '../speech/match'
 import { StarBurst } from './Effects'
 import { useStage } from './Stage'
@@ -30,9 +30,9 @@ async function playTeach(round: ChoiceRound) {
 /** Dusty-pink speech bubble that holds the microphone ("Tap or say it"). */
 export function SayItPill({ children, label = 'Or say it!' }: { children: React.ReactNode; label?: string }) {
   return (
-    <div className="card" style={{ cursor: 'default', display: 'flex', alignItems: 'center', gap: 18, padding: '8px 14px 8px 28px', background: 'linear-gradient(#fbe3ea, #f4c9d6)', borderColor: '#fff' }}>
+    <div className="card" style={{ cursor: 'default', display: 'flex', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center', gap: '8px 18px', maxWidth: 440, padding: '8px 14px 8px 28px', background: 'linear-gradient(#fbe3ea, #f4c9d6)', borderColor: '#fff' }}>
       <span className="title-font" style={{ fontSize: 30, color: '#8a3a5c', fontWeight: 600 }}>{label}</span>
-      {children}
+      <InPill.Provider value={true}>{children}</InPill.Provider>
     </div>
   )
 }
@@ -43,12 +43,12 @@ export function outcomeFor(misses: number, revealed: boolean): Outcome {
 }
 
 // ------------------------------------------------------------------ visuals
-export function VisualView({ visual, width }: { visual?: Visual; width?: number }) {
+export function VisualView({ visual, width, solved }: { visual?: Visual; width?: number; solved?: boolean }) {
   const { portrait } = useStage()
   if (!visual || visual.type === 'none' || visual.type === 'listen') return null
   switch (visual.type) {
     case 'scene':
-      return <Scene items={visual.items} bg={visual.bg} caption={visual.caption} width={width ?? (portrait ? 820 : 760)} />
+      return <Scene items={visual.items} bg={visual.bg} caption={(solved && visual.captionDone) || visual.caption} captionTr={solved ? visual.captionTr : undefined} width={width ?? (portrait ? 820 : 760)} />
     case 'object':
       return (
         <div className="panel" style={{ width: 430, height: portrait ? 360 : 400, display: 'grid', placeItems: 'center', flex: 'none' }}>
@@ -164,6 +164,7 @@ export function ChoiceActivity({
   const [wrong, setWrong] = useState<string[]>([])
   const [revealed, setRevealed] = useState(false)
   const [solved, setSolved] = useState<string | null>(null)
+  const [spoken, setSpoken] = useState<string | null>(null)
   const [burst, setBurst] = useState<{ x: number; y: number; k: number } | null>(null)
   const busy = useRef(false)
   const { portrait } = useStage()
@@ -175,6 +176,7 @@ export function ChoiceActivity({
     setWrong([])
     setRevealed(false)
     setSolved(null)
+    setSpoken(null)
     busy.current = false
     if (phase === 'lead') return
     if (round.teach) {
@@ -190,7 +192,7 @@ export function ChoiceActivity({
 
   if (!round) return null
 
-  async function choose(opt: Option, e?: { x: number; y: number }) {
+  async function choose(opt: Option, e?: { x: number; y: number }, byVoice = false) {
     if (phase !== 'ask' || busy.current || solved) return
     if (revealed && !opt.correct) return
     if (opt.correct) {
@@ -203,10 +205,10 @@ export function ChoiceActivity({
         setQueue((q) => [...q, { ...round, _k: round._k + '-again', _again: true }])
       }
       if (opt.say) await say(opt.say, 'alya')
-      const praise = round.after ?? pick(PRAISE)
+      const praise = round.after ?? pick(byVoice ? SAID : PRAISE)
       setGuide(praise)
       await sayLine(praise)
-      await new Promise((r) => setTimeout(r, 450))
+      await new Promise((r) => setTimeout(r, round.visual?.type === 'scene' && round.visual.captionTr ? 1300 : 450))
       if (idx + 1 < queue.length + (requeue && misses > 0 && !round._again ? 1 : 0)) setIdx((i) => i + 1)
       else {
         setPhase('done')
@@ -235,7 +237,8 @@ export function ChoiceActivity({
     if (o.kind === 'correct') {
       const said = normalize(o.heard)
       const c = options.find((x) => x.correct && x.label && said.includes(normalize(x.label))) ?? options.find((x) => x.correct)
-      if (c) choose({ ...c, say: undefined })
+      setSpoken(o.heard)
+      if (c) choose({ ...c, say: undefined }, undefined, true)
     } else if (o.kind === 'partial') {
       sayLine(UI.wholeSentence)
       setGuide(UI.wholeSentence)
@@ -327,7 +330,7 @@ export function ChoiceActivity({
           animate={{ opacity: 1, y: 0 }}
           style={{ position: 'absolute', left: portrait ? 30 : 60, right: portrait ? 30 : 60, top: portrait ? 290 : 180, bottom: 60, display: 'flex', flexDirection: portrait ? 'column' : 'row', alignItems: 'center', justifyContent: 'center', gap: portrait ? 34 : 60 }}
         >
-          {hasVisual && <VisualView visual={round.visual} />}
+          {hasVisual && <VisualView visual={round.visual} solved={!!solved} />}
           {round.visual?.type === 'listen' && (
             <button className="btn btn-sun" aria-label="Listen again" onClick={() => sayLine(round.prompt)} style={{ width: 230, height: 230, borderRadius: '50%', display: 'grid', placeItems: 'center' }}>
               <Volume2 size={120} />
@@ -360,6 +363,11 @@ export function ChoiceActivity({
                 />
               ))}
             </div>
+            {spoken && solved && (
+              <div style={{ width: 400, maxWidth: '100%' }}>
+                <MicResult kind="good" text="Correct!" tr="Doğru!" heard={spoken} />
+              </div>
+            )}
             {round.speak && !solved && (
               <SayItPill>
                 <MicButton spec={round.speak} level={level} item={`${round.topic}:${round.id}`} onOutcome={onMic} size={84} label="" />

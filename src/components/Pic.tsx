@@ -7,7 +7,7 @@ export function Pic({ pic, size = 150, className }: { pic: string; size?: number
 }
 
 /** A 1000 x 600 picture made of sprites, scaled to the given width. */
-export function Scene({ items, bg, caption, width = 640, onTap }: Omit<Extract<Visual, { type: 'scene' }>, 'type'> & { width?: number; onTap?: (i: number) => void }) {
+export function Scene({ items, bg, caption, captionTr, width = 640, onTap }: Omit<Extract<Visual, { type: 'scene' }>, 'type'> & { width?: number; onTap?: (i: number) => void }) {
   const H = bg === 'house' ? 563 : 600
   const s = width / 1000
   return (
@@ -19,7 +19,10 @@ export function Scene({ items, bg, caption, width = 640, onTap }: Omit<Extract<V
         ))}
         {caption && (
           <div className="title-font" style={{ position: 'absolute', left: 0, right: 0, bottom: 12, textAlign: 'center', fontSize: 62, fontWeight: 700, color: '#3d2a66' }}>
-            <span style={{ background: 'rgba(255,255,255,0.92)', borderRadius: 24, padding: '2px 30px' }}>{caption}</span>
+            <span style={{ display: 'inline-block', background: 'rgba(255,255,255,0.92)', borderRadius: 24, padding: '2px 30px' }}>
+              {caption}
+              {captionTr && <span style={{ display: 'block', fontSize: 46, lineHeight: 1.1, paddingBottom: 6, fontWeight: 800, color: '#e0709b', fontFamily: 'var(--font-body)' }}>{captionTr}</span>}
+            </span>
           </div>
         )}
       </div>
@@ -39,9 +42,10 @@ export function Item({ it, onTap }: { it: SceneItem; onTap?: () => void }) {
         top: it.y - it.h,
         height: it.h,
         maxWidth: 'none',
-        transform: `translateX(-50%)${it.flip ? ' scaleX(-1)' : ''}`,
+        transform: `translateX(-50%)${it.flip ? ' scaleX(-1)' : ''}${it.sy ? ` scaleY(${it.sy})` : ''}`,
+        transformOrigin: '50% 100%',
         clipPath: it.front ? `inset(${it.front * 100}% 0 0 0)` : undefined,
-        filter: it.front ? undefined : it.glow ? 'drop-shadow(0 0 14px #fff2a8) drop-shadow(0 0 5px #f2b705)' : 'drop-shadow(0 6px 5px rgba(60,40,90,0.18))',
+        filter: it.front ? undefined : it.edge ? 'drop-shadow(0 0 2px #6b3f12) drop-shadow(0 3px 2px rgba(70,40,10,0.55))' : it.glow ? 'drop-shadow(0 0 14px #fff2a8) drop-shadow(0 0 5px #f2b705)' : 'drop-shadow(0 6px 5px rgba(60,40,90,0.18))',
         cursor: onTap ? 'pointer' : undefined,
       }}
     />

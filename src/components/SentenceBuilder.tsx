@@ -16,12 +16,15 @@ export function SentenceBuilder({
   onSolved,
   onMiss,
   compact = false,
+  tr,
 }: {
   words: string[]
   pic?: string
   onSolved: () => void
   onMiss?: (n: number) => void
   compact?: boolean
+  /** Turkish meaning, shown when the sentence is finished */
+  tr?: string
 }) {
   const tiles = useMemo(() => {
     let s = shuffle(words.map((w, i) => ({ id: `${i}-${w}`, w })))
@@ -110,7 +113,7 @@ export function SentenceBuilder({
           })}
         </div>
         <div style={{ display: 'flex', gap: compact ? 12 : 20, flexWrap: 'wrap', justifyContent: 'center', minHeight: compact ? 60 : 90 }}>
-          {tiles.filter((t) => !placed.includes(t.id)).map((t) => tile(t, false))}
+          {done && tr ? <BuiltTr tr={tr} size={compact ? 38 : 48} /> : tiles.filter((t) => !placed.includes(t.id)).map((t) => tile(t, false))}
         </div>
         {!compact && placed.length > 0 && !done && (
           <button className="btn btn-cream" style={{ fontSize: 22, padding: '6px 18px', display: 'flex', gap: 6, alignItems: 'center' }} onClick={() => setPlaced([])}>
@@ -121,3 +124,9 @@ export function SentenceBuilder({
     </LayoutGroup>
   )
 }
+
+export const BuiltTr = ({ tr, size = 34 }: { tr: string; size?: number }) => (
+  <motion.div data-testid="built-tr" initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} style={{ fontSize: size, fontWeight: 800, color: '#e0709b', textAlign: 'center', lineHeight: 1.2 }}>
+    {tr}
+  </motion.div>
+)

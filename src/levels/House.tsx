@@ -61,6 +61,7 @@ function PutIn({ onDone }: { onDone: () => void }) {
         if (busy.current) return false
         if (item === r.id && target === r.room) {
           busy.current = true
+          fb.cancel()
           sfx.drop()
           sfx.correct()
           setPlaced((p) => ({ ...p, [item]: r.room }))
@@ -179,6 +180,7 @@ function Decorate({ onDone }: { onDone: () => void }) {
       .map((x) => whereRound(x.t.id, x.r!, { type: 'none' }))
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [phase])
+  const layer = Object.keys(decor)
   const items = DECOR.map((d, k) => {
     const pos = drag?.id === d.id ? ([drag.x, drag.y] as [number, number]) : decor[d.id]
     const [w0, h0] = size('obj/' + d.id)
@@ -190,9 +192,7 @@ function Decorate({ onDone }: { onDone: () => void }) {
   return (
     <div style={{ position: 'absolute', inset: 0 }}>
       {phase === 'play' && <Guide line={guide} />}
-      {items
-        .sort((a, b) => a.y - b.y)
-        .map((d) => (
+      {items.map((d) => (
           <div
             key={d.id}
             role="button"
@@ -217,7 +217,7 @@ function Decorate({ onDone }: { onDone: () => void }) {
               start.current = null
             }}
             onPointerCancel={() => setDrag(null)}
-            style={{ position: 'absolute', left: d.x - d.w / 2, top: d.y - d.h, width: d.w, height: d.h, touchAction: 'none', cursor: 'grab', zIndex: drag?.id === d.id ? 30 : 4 }}
+            style={{ position: 'absolute', left: d.x - d.w / 2, top: d.y - d.h, width: d.w, height: d.h, touchAction: 'none', cursor: 'grab', zIndex: drag?.id === d.id ? 34 : 4 + layer.indexOf(d.id) }}
           >
             {!d.out && <span style={{ position: 'absolute', inset: -6, borderRadius: 16, background: 'rgba(255,255,255,0.8)' }} />}
             <img src={img('obj/' + d.id)} alt={d.id} draggable={false} style={{ position: 'relative', width: '100%', height: '100%', filter: 'drop-shadow(0 4px 4px rgba(60,40,90,.25))' }} />

@@ -9,8 +9,6 @@ import { MicButton } from '../components/Mic'
 import { useStage } from '../components/Stage'
 import { useGame } from '../store/gameStore'
 import { PHRASES, TALK, actRounds, meanRounds, type Phrase } from '../content/talk'
-import { PRAISE, pick } from '../content/lines'
-import { REPEAT } from '../content/ui'
 import { sfx } from '../audio/sfx'
 
 const ICON: Record<string, typeof Ear> = { ear: Ear, repeat: Repeat, book: BookOpen, help: CircleHelp, eye: Eye, message: MessageCircle, hand: Hand, rotate: RotateCcw, megaphone: Megaphone, pencil: Pencil, bulb: Lightbulb, star: Star, user: UserRound, languages: Languages }
@@ -87,7 +85,7 @@ function Cards({ onDone }: { onDone: () => void }) {
               </button>
               <TrButton lines={[cur.line]} style={{ width: 110, height: 64, fontSize: 28 }} />
               <SayItPill label="Repeat!">
-                <MicButton key={cur.id} spec={{ accept: [cur.line.en.replace(', please', ''), cur.line.en] }} level="talk" item={cur.id} size={84} label="" onOutcome={(o) => (o.kind === 'correct' ? (sfx.correct(), sayLine(pick(PRAISE))) : o.kind === 'other-answer' && sayLine(REPEAT))} />
+                <MicButton key={cur.id} spec={{ accept: [cur.line.en.replace(', please', ''), cur.line.en] }} level="talk" item={cur.id} size={84} label="" repeat={cur.line.en} repeatVoice="teacher" />
               </SayItPill>
             </div>
             <NextButton

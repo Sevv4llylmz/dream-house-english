@@ -55,6 +55,15 @@ export const PRAISE = [
   L('Well done!', 'Aferin!'),
   L("That's right!", 'Doğru!'),
   L('Super!', 'Süper!'),
+  L('Perfect!', 'Kusursuz!'),
+  L('Correct!', 'Doğru!'),
+]
+/** after a correct sentence in the microphone */
+export const SAID = [
+  L('Yes! You said it right!', 'Evet! Doğru söyledin!'),
+  L('Correct! Very good speaking!', 'Doğru! Çok güzel konuştun!'),
+  L('Perfect! I understood you!', 'Kusursuz! Seni anladım!'),
+  L('Well done! That is correct!', 'Aferin! Bu doğru!'),
 ]
 export const TRY = [
   L('Good try!', 'Güzel deneme!'),

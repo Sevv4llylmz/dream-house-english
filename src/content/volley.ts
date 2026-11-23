@@ -10,7 +10,7 @@ import { whichRounds, phoneRounds } from './house'
 export const V = {
   intro: [L('Alya and Mia play against me!', 'Alya ve Mia bana karşı oynuyor!'), L('Pass: listen. Set: make a sentence. Spike: say it!', 'Pas: dinle. Set: cümle kur. Smaç: söyle!')],
   serve: L('Are you ready? Here comes the ball!', 'Hazır mısın? Top geliyor!'),
-  pass: L('Pass!', 'Pas!'),
+  passText: L('Which picture is it?', 'Hangi resim? Sarı hoparlöre dokunup kelimeyi tekrar dinleyebilirsin.'),
   set: L('Set! Make a sentence.', 'Set! Cümle kur.'),
   spike: L('Spike! Say it!', 'Smaç! Söyle!'),
   ohNo: L('Oh no!', 'Eyvah!'),
@@ -22,7 +22,7 @@ export const V = {
 }
 export const WIN = 5
 
-const FIND: Record<string, Line> = Object.fromEntries(ALL_WORDS.map((w) => [w.id, L(`Listen: ${w.en}!`, `Dinle: [[${w.en}!]]`)]))
+const FIND: Record<string, Line> = Object.fromEntries(ALL_WORDS.map((w) => [w.id, L(`${w.en[0].toUpperCase() + w.en.slice(1)}!`)]))
 export function passRound(w: Word): ChoiceRound {
   return {
     id: w.id, topic: w.set + '-words', skill: 'listening', prompt: FIND[w.id], hideText: true, visual: { type: 'listen' },

@@ -41,6 +41,50 @@
  },
  {
   "voice": "teacher",
+  "text": "Perfect!"
+ },
+ {
+  "voice": "tr",
+  "text": "Kusursuz!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Correct!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Yes! You said it right!"
+ },
+ {
+  "voice": "tr",
+  "text": "Evet! Doğru söyledin!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Correct! Very good speaking!"
+ },
+ {
+  "voice": "tr",
+  "text": "Doğru! Çok güzel konuştun!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Perfect! I understood you!"
+ },
+ {
+  "voice": "tr",
+  "text": "Kusursuz! Seni anladım!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Well done! That is correct!"
+ },
+ {
+  "voice": "tr",
+  "text": "Aferin! Bu doğru!"
+ },
+ {
+  "voice": "teacher",
   "text": "Good try!"
  },
  {
@@ -1585,19 +1629,27 @@
  },
  {
   "voice": "teacher",
-  "text": "Are there books under the chair?"
+  "text": "Are there two books under the chair?"
  },
  {
   "voice": "tr",
-  "text": "Sandalyenin altında kitap var mı?"
+  "text": "Sandalyenin altında iki kitap var mı?"
  },
  {
   "voice": "teacher",
-  "text": "Look at the book. Is it on or under the chair?"
+  "text": "Look under the chair. Count the books."
  },
  {
   "voice": "tr",
-  "text": "Kitaba bak. Sandalyenin üstünde mi, altında mı?"
+  "text": "Sandalyenin altına bak. Kitapları say."
+ },
+ {
+  "voice": "teacher",
+  "text": "Are there computers in the classroom?"
+ },
+ {
+  "voice": "tr",
+  "text": "Sınıfta bilgisayarlar var mı?"
  },
  {
   "voice": "teacher",
@@ -1753,67 +1805,11 @@
  },
  {
   "voice": "teacher",
-  "text": "Near: this, these."
- },
- {
-  "voice": "tr",
-  "text": "Yakında:"
- },
- {
-  "voice": "teacher",
-  "text": "this"
- },
- {
-  "voice": "tr",
-  "text": "bu,"
- },
- {
-  "voice": "teacher",
-  "text": "these"
- },
- {
-  "voice": "tr",
-  "text": "bunlar."
- },
- {
-  "voice": "teacher",
-  "text": "Far away: that, those."
- },
- {
-  "voice": "tr",
-  "text": "Uzakta:"
- },
- {
-  "voice": "teacher",
-  "text": "that"
- },
- {
-  "voice": "tr",
-  "text": "şu,"
- },
- {
-  "voice": "teacher",
-  "text": "those"
- },
- {
-  "voice": "tr",
-  "text": "şunlar."
- },
- {
-  "voice": "teacher",
   "text": "Listen to me and take a photo!"
  },
  {
   "voice": "tr",
   "text": "Beni dinle ve fotoğraf çek!"
- },
- {
-  "voice": "teacher",
-  "text": "Near or far? One or many?"
- },
- {
-  "voice": "tr",
-  "text": "Yakın mı, uzak mı? Bir tane mi, çok mu?"
  },
  {
   "voice": "teacher",
@@ -2129,39 +2125,179 @@
  },
  {
   "voice": "teacher",
-  "text": "Which word is right?"
- },
- {
-  "voice": "tr",
-  "text": "Hangi kelime doğru?"
+  "text": "This: near, only one."
  },
  {
   "voice": "teacher",
-  "text": "Near. This or these?"
+  "text": "this"
  },
  {
   "voice": "tr",
-  "text": "Yakında."
- },
- {
-  "voice": "tr",
-  "text": "mi,"
- },
- {
-  "voice": "tr",
-  "text": "mi?"
+  "text": ", yakında ve bir tane olan şey. Yani bu."
  },
  {
   "voice": "teacher",
-  "text": "Far away. That or those?"
+  "text": "These: near, two or more."
+ },
+ {
+  "voice": "teacher",
+  "text": "these"
  },
  {
   "voice": "tr",
-  "text": "Uzakta."
+  "text": ", yakında ve birden fazla olan şeyler. Yani bunlar."
+ },
+ {
+  "voice": "teacher",
+  "text": "That: far away, only one."
+ },
+ {
+  "voice": "teacher",
+  "text": "that"
  },
  {
   "voice": "tr",
-  "text": "mu?"
+  "text": ", uzakta ve bir tane olan şey. Yani şu."
+ },
+ {
+  "voice": "teacher",
+  "text": "Those: far away, two or more."
+ },
+ {
+  "voice": "teacher",
+  "text": "those"
+ },
+ {
+  "voice": "tr",
+  "text": ", uzakta ve birden fazla olan şeyler. Yani şunlar."
+ },
+ {
+  "voice": "teacher",
+  "text": "Is it near or far?"
+ },
+ {
+  "voice": "tr",
+  "text": "Yakın mı, uzak mı?"
+ },
+ {
+  "voice": "tr",
+  "text": "Önce nerede olduğuna bakarız. Elini uzatınca dokunabiliyorsan yakın. Dokunamıyorsan uzak."
+ },
+ {
+  "voice": "teacher",
+  "text": "This is a robot."
+ },
+ {
+  "voice": "tr",
+  "text": "Bu bir robot."
+ },
+ {
+  "voice": "tr",
+  "text": "Robot yakınımda ve bir tane. Ona dokunabilirim. O zaman"
+ },
+ {
+  "voice": "tr",
+  "text": "derim."
+ },
+ {
+  "voice": "teacher",
+  "text": "These are robots."
+ },
+ {
+  "voice": "tr",
+  "text": "Bunlar robot."
+ },
+ {
+  "voice": "tr",
+  "text": "Robotlar yine yakınımda ama birden fazla. O zaman"
+ },
+ {
+  "voice": "tr",
+  "text": "derim. Çok oldukları için"
+ },
+ {
+  "voice": "teacher",
+  "text": "is"
+ },
+ {
+  "voice": "tr",
+  "text": "değil,"
+ },
+ {
+  "voice": "teacher",
+  "text": "are"
+ },
+ {
+  "voice": "tr",
+  "text": "kullanırım."
+ },
+ {
+  "voice": "teacher",
+  "text": "That is a robot."
+ },
+ {
+  "voice": "tr",
+  "text": "Şu bir robot."
+ },
+ {
+  "voice": "tr",
+  "text": "Robot uzakta ve bir tane. Ona dokunamam, parmağımla gösteririm. O zaman"
+ },
+ {
+  "voice": "teacher",
+  "text": "Those are robots."
+ },
+ {
+  "voice": "tr",
+  "text": "Şunlar robot."
+ },
+ {
+  "voice": "tr",
+  "text": "Robotlar uzakta ve birden fazla. O zaman"
+ },
+ {
+  "voice": "tr",
+  "text": "derim. Çok oldukları için yine"
+ },
+ {
+  "voice": "teacher",
+  "text": "Let's remember!"
+ },
+ {
+  "voice": "tr",
+  "text": "Hadi hatırlayalım!"
+ },
+ {
+  "voice": "tr",
+  "text": "Kendine iki soru sor. Bir: Yakın mı, uzak mı? İki: Bir tane mi, birden fazla mı?"
+ },
+ {
+  "voice": "teacher",
+  "text": "Near or far? One or many? Choose the word!"
+ },
+ {
+  "voice": "tr",
+  "text": "Yakın mı, uzak mı? Bir tane mi, birden fazla mı? Kelimeyi seç!"
+ },
+ {
+  "voice": "teacher",
+  "text": "It is near. Is it one or many? This or these?"
+ },
+ {
+  "voice": "tr",
+  "text": "Yakında. Bir taneyse"
+ },
+ {
+  "voice": "tr",
+  "text": ", birden fazlaysa"
+ },
+ {
+  "voice": "teacher",
+  "text": "It is far away. Is it one or many? That or those?"
+ },
+ {
+  "voice": "tr",
+  "text": "Uzakta. Bir taneyse"
  },
  {
   "voice": "alya",
@@ -2865,11 +3001,11 @@
  },
  {
   "voice": "teacher",
-  "text": "Pass!"
+  "text": "Which picture is it?"
  },
  {
   "voice": "tr",
-  "text": "Pas!"
+  "text": "Hangi resim? Sarı hoparlöre dokunup kelimeyi tekrar dinleyebilirsin."
  },
  {
   "voice": "teacher",
@@ -2969,191 +3105,99 @@
  },
  {
   "voice": "teacher",
-  "text": "Listen: bookcase!"
- },
- {
-  "voice": "tr",
-  "text": "Dinle:"
+  "text": "Bookcase!"
  },
  {
   "voice": "teacher",
-  "text": "bookcase!"
+  "text": "Board!"
  },
  {
   "voice": "teacher",
-  "text": "Listen: board!"
+  "text": "Cupboard!"
  },
  {
   "voice": "teacher",
-  "text": "board!"
+  "text": "Computer!"
  },
  {
   "voice": "teacher",
-  "text": "Listen: cupboard!"
+  "text": "Desk!"
  },
  {
   "voice": "teacher",
-  "text": "cupboard!"
+  "text": "Ruler!"
  },
  {
   "voice": "teacher",
-  "text": "Listen: computer!"
+  "text": "Teacher!"
  },
  {
   "voice": "teacher",
-  "text": "computer!"
+  "text": "Television!"
  },
  {
   "voice": "teacher",
-  "text": "Listen: desk!"
+  "text": "Whiteboard!"
  },
  {
   "voice": "teacher",
-  "text": "desk!"
+  "text": "Alien!"
  },
  {
   "voice": "teacher",
-  "text": "Listen: ruler!"
+  "text": "Camera!"
  },
  {
   "voice": "teacher",
-  "text": "ruler!"
+  "text": "Board game!"
  },
  {
   "voice": "teacher",
-  "text": "Listen: teacher!"
+  "text": "Kite!"
  },
  {
   "voice": "teacher",
-  "text": "teacher!"
+  "text": "Lorry!"
  },
  {
   "voice": "teacher",
-  "text": "Listen: television!"
+  "text": "Robot!"
  },
  {
   "voice": "teacher",
-  "text": "television!"
+  "text": "Tablet!"
  },
  {
   "voice": "teacher",
-  "text": "Listen: whiteboard!"
+  "text": "Watch!"
  },
  {
   "voice": "teacher",
-  "text": "whiteboard!"
+  "text": "Teddy bear!"
  },
  {
   "voice": "teacher",
-  "text": "Listen: alien!"
+  "text": "Clock!"
  },
  {
   "voice": "teacher",
-  "text": "alien!"
+  "text": "Lamp!"
  },
  {
   "voice": "teacher",
-  "text": "Listen: camera!"
+  "text": "Mat!"
  },
  {
   "voice": "teacher",
-  "text": "camera!"
+  "text": "Mirror!"
  },
  {
   "voice": "teacher",
-  "text": "Listen: board game!"
+  "text": "Phone!"
  },
  {
   "voice": "teacher",
-  "text": "board game!"
- },
- {
-  "voice": "teacher",
-  "text": "Listen: kite!"
- },
- {
-  "voice": "teacher",
-  "text": "Listen: lorry!"
- },
- {
-  "voice": "teacher",
-  "text": "lorry!"
- },
- {
-  "voice": "teacher",
-  "text": "Listen: robot!"
- },
- {
-  "voice": "teacher",
-  "text": "robot!"
- },
- {
-  "voice": "teacher",
-  "text": "Listen: tablet!"
- },
- {
-  "voice": "teacher",
-  "text": "tablet!"
- },
- {
-  "voice": "teacher",
-  "text": "Listen: watch!"
- },
- {
-  "voice": "teacher",
-  "text": "watch!"
- },
- {
-  "voice": "teacher",
-  "text": "Listen: teddy bear!"
- },
- {
-  "voice": "teacher",
-  "text": "teddy bear!"
- },
- {
-  "voice": "teacher",
-  "text": "Listen: clock!"
- },
- {
-  "voice": "teacher",
-  "text": "clock!"
- },
- {
-  "voice": "teacher",
-  "text": "Listen: lamp!"
- },
- {
-  "voice": "teacher",
-  "text": "Listen: mat!"
- },
- {
-  "voice": "teacher",
-  "text": "mat!"
- },
- {
-  "voice": "teacher",
-  "text": "Listen: mirror!"
- },
- {
-  "voice": "teacher",
-  "text": "mirror!"
- },
- {
-  "voice": "teacher",
-  "text": "Listen: phone!"
- },
- {
-  "voice": "teacher",
-  "text": "phone!"
- },
- {
-  "voice": "teacher",
-  "text": "Listen: sofa!"
- },
- {
-  "voice": "teacher",
-  "text": "sofa!"
+  "text": "Sofa!"
  },
  {
   "voice": "alya",
@@ -3230,6 +3274,22 @@
  {
   "voice": "tr",
   "text": "Benden sonra tekrar et!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Almost! Listen and repeat."
+ },
+ {
+  "voice": "tr",
+  "text": "Az kaldı! Dinle ve tekrar et."
+ },
+ {
+  "voice": "teacher",
+  "text": "Now you ask me this question!"
+ },
+ {
+  "voice": "tr",
+  "text": "Şimdi bu soruyu bana sen sor! Mikrofona dokun ve söyle."
  },
  {
   "voice": "teacher",

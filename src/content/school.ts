@@ -1,6 +1,6 @@
 /** Level 2 – school things, numbers 11-20, There is / There are, How many…? */
 import { A, L, shuffle, type Line } from './lines'
-import { at, rows, word, NUM, NUM_TR, spot } from './vocab'
+import { at, rows, word, NUM, NUM_TR } from './vocab'
 import type { ChoiceRound, SceneItem } from './types'
 
 export const SC = {
@@ -43,7 +43,7 @@ function many(id: string, n: number, per: number, h: number, opts: number[]): Ch
 }
 export const manyRounds: ChoiceRound[] = [many('pen', 11, 6, 190, [11, 12, 13]), many('ruler', 13, 5, 130, [12, 13, 15]), many('desk', 12, 4, 170, [11, 12, 20]), many('book', 15, 5, 140, [14, 15, 16]), many('computer', 1, 1, 420, [1, 2, 11])]
 
-const room: SceneItem[] = [at('obj/board', 300, 220, 270), at('obj/bookcase', 110, 330), at('obj/desk', 520, 250), at('obj/television', 820, 260), at('obj/ruler', 520, 60, 345)]
+const room: SceneItem[] = [at('obj/board', 470, 180, 235), at('obj/bookcase', 120, 330, 545), at('obj/television', 850, 225, 520), at('obj/desk', 490, 330, 592), at('obj/ruler', 478, 104, 381, { sy: 0.5, edge: true })]
 const YES = A('Yes, there is.'), NO = A("No, there isn't."), YESP = A('Yes, there are.'), NOP = A("No, there aren't.")
 function isThere(id: string, q: string, tr: string, yes: boolean, plural: boolean, items: SceneItem[], explain: [string, string]): ChoiceRound {
   const [Y, N] = plural ? [YESP, NOP] : [YES, NO]
@@ -60,7 +60,8 @@ export const isThereRounds: ChoiceRound[] = [
   isThere('whiteboard', 'Is there a whiteboard?', 'Beyaz tahta var mı?', false, false, room, ['A whiteboard is white. Can you see it?', 'Beyaz tahtanın rengi beyaz. Onu görüyor musun?']),
   isThere('computer', 'Is there a computer on the desk?', 'Sıranın üstünde bilgisayar var mı?', false, false, room, look),
   isThere('pens', 'Are there fifteen pens on the desk?', 'Sıranın üstünde on beş kalem var mı?', true, true, pens(15), ['Count the pens.', 'Kalemleri say.']),
-  isThere('books', 'Are there books under the chair?', 'Sandalyenin altında kitap var mı?', false, true, spot('on-chair', { k: 'obj/book', h: 110 }), ['Look at the book. Is it on or under the chair?', 'Kitaba bak. Sandalyenin üstünde mi, altında mı?']),
+  isThere('books', 'Are there two books under the chair?', 'Sandalyenin altında iki kitap var mı?', true, true, [at('obj/book', 447, 78, 588), at('obj/book', 553, 78, 588), at('obj/chair', 500, 520, 592)], ['Look under the chair. Count the books.', 'Sandalyenin altına bak. Kitapları say.']),
+  isThere('computers', 'Are there computers in the classroom?', 'Sınıfta bilgisayarlar var mı?', false, true, room, look),
 ]
 
 /** Picture 1 has everything; `missing` is not in picture 2. */
