@@ -1,0 +1,3266 @@
+[
+ {
+  "voice": "teacher",
+  "text": "Great job!"
+ },
+ {
+  "voice": "tr",
+  "text": "Harika iş!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Excellent!"
+ },
+ {
+  "voice": "tr",
+  "text": "Mükemmel!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Well done!"
+ },
+ {
+  "voice": "tr",
+  "text": "Aferin!"
+ },
+ {
+  "voice": "teacher",
+  "text": "That's right!"
+ },
+ {
+  "voice": "tr",
+  "text": "Doğru!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Super!"
+ },
+ {
+  "voice": "tr",
+  "text": "Süper!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Good try!"
+ },
+ {
+  "voice": "tr",
+  "text": "Güzel deneme!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Almost!"
+ },
+ {
+  "voice": "tr",
+  "text": "Az kaldı!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Let's try again!"
+ },
+ {
+  "voice": "tr",
+  "text": "Hadi tekrar deneyelim!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Your turn!"
+ },
+ {
+  "voice": "tr",
+  "text": "Sıra sende!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Let's listen again!"
+ },
+ {
+  "voice": "tr",
+  "text": "Hadi tekrar dinleyelim!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Listen carefully!"
+ },
+ {
+  "voice": "tr",
+  "text": "Dikkatle dinle!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Tap the microphone and say it."
+ },
+ {
+  "voice": "tr",
+  "text": "Mikrofona dokun ve söyle."
+ },
+ {
+  "voice": "teacher",
+  "text": "I'm listening!"
+ },
+ {
+  "voice": "tr",
+  "text": "Dinliyorum!"
+ },
+ {
+  "voice": "teacher",
+  "text": "I didn't hear you. Let's try again!"
+ },
+ {
+  "voice": "tr",
+  "text": "Seni duyamadım. Hadi tekrar deneyelim!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Answer recognized!"
+ },
+ {
+  "voice": "tr",
+  "text": "Cevap anlaşıldı!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Good! Now say the whole sentence!"
+ },
+ {
+  "voice": "tr",
+  "text": "Güzel! Şimdi cümlenin tamamını söyle!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Hmm, that's a different answer. Listen and try again!"
+ },
+ {
+  "voice": "tr",
+  "text": "Hmm, bu farklı bir cevap. Dinle ve tekrar dene!"
+ },
+ {
+  "voice": "teacher",
+  "text": "You can tap the answer, too."
+ },
+ {
+  "voice": "tr",
+  "text": "Cevaba dokunarak da seçebilirsin."
+ },
+ {
+  "voice": "teacher",
+  "text": "Let's go on!"
+ },
+ {
+  "voice": "tr",
+  "text": "Devam edelim!"
+ },
+ {
+  "voice": "teacher",
+  "text": "You did it! Next challenge!"
+ },
+ {
+  "voice": "tr",
+  "text": "Başardın! Sıradaki göreve!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Choose a place on the map!"
+ },
+ {
+  "voice": "tr",
+  "text": "Haritadan bir yer seç!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Fantastic! You earned a new reward!"
+ },
+ {
+  "voice": "tr",
+  "text": "Harika! Yeni bir ödül kazandın!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Hello! What's your name?"
+ },
+ {
+  "voice": "tr",
+  "text": "Merhaba! Adın ne?"
+ },
+ {
+  "voice": "teacher",
+  "text": "Hi, Alya!"
+ },
+ {
+  "voice": "tr",
+  "text": "Merhaba, Alya!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Welcome to your Dream House!"
+ },
+ {
+  "voice": "tr",
+  "text": "Rüya Evine hoş geldin!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Are you ready to play?"
+ },
+ {
+  "voice": "tr",
+  "text": "Oynamaya hazır mısın?"
+ },
+ {
+  "voice": "teacher",
+  "text": "Welcome back, Alya!"
+ },
+ {
+  "voice": "tr",
+  "text": "Tekrar hoş geldin, Alya!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Let's play!"
+ },
+ {
+  "voice": "tr",
+  "text": "Hadi oynayalım!"
+ },
+ {
+  "voice": "teacher",
+  "text": "You have a new house! But the doors are locked."
+ },
+ {
+  "voice": "tr",
+  "text": "Yeni bir evin var! Ama kapılar kilitli."
+ },
+ {
+  "voice": "teacher",
+  "text": "Play with your friends and win the star keys!"
+ },
+ {
+  "voice": "tr",
+  "text": "Arkadaşlarınla oyna ve yıldız anahtarları kazan!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Then we can play volleyball!"
+ },
+ {
+  "voice": "tr",
+  "text": "Sonra voleybol oynayabiliriz!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Listen to me, please."
+ },
+ {
+  "voice": "tr",
+  "text": "Beni dinle lütfen."
+ },
+ {
+  "voice": "teacher",
+  "text": "Repeat after me."
+ },
+ {
+  "voice": "tr",
+  "text": "Benden sonra tekrar et."
+ },
+ {
+  "voice": "teacher",
+  "text": "Read, please."
+ },
+ {
+  "voice": "tr",
+  "text": "Oku lütfen."
+ },
+ {
+  "voice": "teacher",
+  "text": "What does that mean?"
+ },
+ {
+  "voice": "tr",
+  "text": "Bu ne demek?"
+ },
+ {
+  "voice": "teacher",
+  "text": "Look at the picture."
+ },
+ {
+  "voice": "tr",
+  "text": "Resme bak."
+ },
+ {
+  "voice": "teacher",
+  "text": "Answer the question."
+ },
+ {
+  "voice": "tr",
+  "text": "Soruyu cevapla."
+ },
+ {
+  "voice": "teacher",
+  "text": "Ask me a question."
+ },
+ {
+  "voice": "tr",
+  "text": "Bana bir soru sor."
+ },
+ {
+  "voice": "teacher",
+  "text": "Say it again, please."
+ },
+ {
+  "voice": "tr",
+  "text": "Tekrar söyle lütfen."
+ },
+ {
+  "voice": "teacher",
+  "text": "Speak louder, please."
+ },
+ {
+  "voice": "tr",
+  "text": "Daha yüksek sesle konuş lütfen."
+ },
+ {
+  "voice": "teacher",
+  "text": "Write it down, please."
+ },
+ {
+  "voice": "tr",
+  "text": "Yaz lütfen."
+ },
+ {
+  "voice": "teacher",
+  "text": "Do you understand?"
+ },
+ {
+  "voice": "tr",
+  "text": "Anladın mı?"
+ },
+ {
+  "voice": "teacher",
+  "text": "Are you ready?"
+ },
+ {
+  "voice": "tr",
+  "text": "Hazır mısın?"
+ },
+ {
+  "voice": "teacher",
+  "text": "It's your turn."
+ },
+ {
+  "voice": "tr",
+  "text": "Sıra sende."
+ },
+ {
+  "voice": "teacher",
+  "text": "How do you say it in English?"
+ },
+ {
+  "voice": "tr",
+  "text": "Bunu İngilizce nasıl söylersin?"
+ },
+ {
+  "voice": "teacher",
+  "text": "These are my sentences in our lessons."
+ },
+ {
+  "voice": "tr",
+  "text": "Bunlar derste söylediğim cümleler."
+ },
+ {
+  "voice": "teacher",
+  "text": "Listen, understand and answer me!"
+ },
+ {
+  "voice": "tr",
+  "text": "Dinle, anla ve bana cevap ver!"
+ },
+ {
+  "voice": "teacher",
+  "text": "My Sentences"
+ },
+ {
+  "voice": "tr",
+  "text": "Cümlelerim"
+ },
+ {
+  "voice": "teacher",
+  "text": "What Does That Mean?"
+ },
+ {
+  "voice": "tr",
+  "text": "Bu Ne Demek?"
+ },
+ {
+  "voice": "teacher",
+  "text": "Lesson Time"
+ },
+ {
+  "voice": "tr",
+  "text": "Ders Zamanı"
+ },
+ {
+  "voice": "teacher",
+  "text": "Tap a card. Listen, then repeat after me!"
+ },
+ {
+  "voice": "tr",
+  "text": "Bir karta dokun. Dinle, sonra benden sonra tekrar et!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Listen to me. What does that mean?"
+ },
+ {
+  "voice": "tr",
+  "text": "Beni dinle. Bu ne demek?"
+ },
+ {
+  "voice": "teacher",
+  "text": "It's lesson time! Do what I say."
+ },
+ {
+  "voice": "tr",
+  "text": "Ders zamanı! Söylediğimi yap."
+ },
+ {
+  "voice": "alya",
+  "text": "Yes, I do."
+ },
+ {
+  "voice": "alya",
+  "text": "I don't understand."
+ },
+ {
+  "voice": "alya",
+  "text": "Can you repeat, please?"
+ },
+ {
+  "voice": "alya",
+  "text": "Yes, I'm ready!"
+ },
+ {
+  "voice": "alya",
+  "text": "lamp"
+ },
+ {
+  "voice": "alya",
+  "text": "Where is the cat?"
+ },
+ {
+  "voice": "alya",
+  "text": "It's a sofa."
+ },
+ {
+  "voice": "alya",
+  "text": "The lamp is on the table."
+ },
+ {
+  "voice": "alya",
+  "text": "It's a pencil."
+ },
+ {
+  "voice": "teacher",
+  "text": "Say: Yes, I'm ready!"
+ },
+ {
+  "voice": "tr",
+  "text": "Şöyle de:"
+ },
+ {
+  "voice": "teacher",
+  "text": "Yes, I’m ready!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Repeat after me: lamp!"
+ },
+ {
+  "voice": "tr",
+  "text": "Benden sonra tekrar et:"
+ },
+ {
+  "voice": "teacher",
+  "text": "lamp!"
+ },
+ {
+  "voice": "alya",
+  "text": "sofa"
+ },
+ {
+  "voice": "alya",
+  "text": "mirror"
+ },
+ {
+  "voice": "teacher",
+  "text": "Say the same word!"
+ },
+ {
+  "voice": "tr",
+  "text": "Aynı kelimeyi söyle!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Mirror. What does that mean?"
+ },
+ {
+  "voice": "teacher",
+  "text": "Mirror."
+ },
+ {
+  "voice": "teacher",
+  "text": "Tell me the Turkish word."
+ },
+ {
+  "voice": "tr",
+  "text": "Türkçesini söyle."
+ },
+ {
+  "voice": "alya",
+  "text": "The lamp is under the table."
+ },
+ {
+  "voice": "teacher",
+  "text": "Read the sentence aloud."
+ },
+ {
+  "voice": "tr",
+  "text": "Cümleyi sesli oku."
+ },
+ {
+  "voice": "teacher",
+  "text": "Look at the picture. What's this?"
+ },
+ {
+  "voice": "tr",
+  "text": "Resme bak. Bu ne?"
+ },
+ {
+  "voice": "alya",
+  "text": "It's a clock."
+ },
+ {
+  "voice": "alya",
+  "text": "It's a phone."
+ },
+ {
+  "voice": "teacher",
+  "text": "Say: It's a ..."
+ },
+ {
+  "voice": "teacher",
+  "text": "It’s a"
+ },
+ {
+  "voice": "alya",
+  "text": "It is under the table."
+ },
+ {
+  "voice": "alya",
+  "text": "Yes, it is."
+ },
+ {
+  "voice": "teacher",
+  "text": "A question asks something. Look for the question mark."
+ },
+ {
+  "voice": "tr",
+  "text": "Soru bir şey sorar. Soru işaretini ara."
+ },
+ {
+  "voice": "teacher",
+  "text": "Good question! The cat is on the sofa."
+ },
+ {
+  "voice": "tr",
+  "text": "Güzel soru! Kedi kanepenin üstünde."
+ },
+ {
+  "voice": "alya",
+  "text": "cat"
+ },
+ {
+  "voice": "alya",
+  "text": "desk"
+ },
+ {
+  "voice": "alya",
+  "text": "kite"
+ },
+ {
+  "voice": "teacher",
+  "text": "You can say: Yes, I do. Or: I don't understand."
+ },
+ {
+  "voice": "tr",
+  "text": "Anladıysan:"
+ },
+ {
+  "voice": "teacher",
+  "text": "Yes, I do."
+ },
+ {
+  "voice": "tr",
+  "text": "Anlamadıysan:"
+ },
+ {
+  "voice": "teacher",
+  "text": "I don’t understand."
+ },
+ {
+  "voice": "teacher",
+  "text": "Thank you for telling me!"
+ },
+ {
+  "voice": "tr",
+  "text": "Söylediğin için teşekkürler!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Hide and Seek! Where is the cat?"
+ },
+ {
+  "voice": "tr",
+  "text": "Saklambaç! Kedi nerede?"
+ },
+ {
+  "voice": "teacher",
+  "text": "You won the Garden Key!"
+ },
+ {
+  "voice": "tr",
+  "text": "Bahçe anahtarını kazandın!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Class Detective! Look and count."
+ },
+ {
+  "voice": "tr",
+  "text": "Sınıf Dedektifi! Bak ve say."
+ },
+ {
+  "voice": "teacher",
+  "text": "You won the School Key!"
+ },
+ {
+  "voice": "tr",
+  "text": "Okul anahtarını kazandın!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Lost Toys! Whose toy is this?"
+ },
+ {
+  "voice": "tr",
+  "text": "Kayıp Oyuncaklar! Bu oyuncak kimin?"
+ },
+ {
+  "voice": "teacher",
+  "text": "You won the Toy Key!"
+ },
+ {
+  "voice": "tr",
+  "text": "Oyuncak anahtarını kazandın!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Dream House! Let's make a beautiful house."
+ },
+ {
+  "voice": "tr",
+  "text": "Rüya Evi! Hadi güzel bir ev yapalım."
+ },
+ {
+  "voice": "teacher",
+  "text": "You won the House Key!"
+ },
+ {
+  "voice": "tr",
+  "text": "Ev anahtarını kazandın!"
+ },
+ {
+  "voice": "teacher",
+  "text": "The Volleyball Cup! Pass, set and spike!"
+ },
+ {
+  "voice": "tr",
+  "text": "Voleybol Kupası! Pas, set ve smaç!"
+ },
+ {
+  "voice": "teacher",
+  "text": "You won the Volleyball Cup!"
+ },
+ {
+  "voice": "tr",
+  "text": "Voleybol kupasını kazandın!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Teacher Talk! Let’s learn what I say in our lessons."
+ },
+ {
+  "voice": "tr",
+  "text": "Öğretmen Cümleleri! Derste söylediklerimi öğrenelim."
+ },
+ {
+  "voice": "teacher",
+  "text": "You won the Super Student Star!"
+ },
+ {
+  "voice": "tr",
+  "text": "Süper Öğrenci yıldızını kazandın!"
+ },
+ {
+  "voice": "alya",
+  "text": "It's a bookcase."
+ },
+ {
+  "voice": "teacher",
+  "text": "Bookcase! It's a bookcase."
+ },
+ {
+  "voice": "tr",
+  "text": "Kitaplık! Bu bir kitaplık."
+ },
+ {
+  "voice": "alya",
+  "text": "It's a board."
+ },
+ {
+  "voice": "teacher",
+  "text": "Board! It's a board."
+ },
+ {
+  "voice": "tr",
+  "text": "Tahta! Bu bir tahta."
+ },
+ {
+  "voice": "alya",
+  "text": "It's a cupboard."
+ },
+ {
+  "voice": "teacher",
+  "text": "Cupboard! It's a cupboard."
+ },
+ {
+  "voice": "tr",
+  "text": "Dolap! Bu bir dolap."
+ },
+ {
+  "voice": "alya",
+  "text": "It's a computer."
+ },
+ {
+  "voice": "teacher",
+  "text": "Computer! It's a computer."
+ },
+ {
+  "voice": "tr",
+  "text": "Bilgisayar! Bu bir bilgisayar."
+ },
+ {
+  "voice": "alya",
+  "text": "It's a desk."
+ },
+ {
+  "voice": "teacher",
+  "text": "Desk! It's a desk."
+ },
+ {
+  "voice": "tr",
+  "text": "Sıra! Bu bir sıra."
+ },
+ {
+  "voice": "alya",
+  "text": "It's a ruler."
+ },
+ {
+  "voice": "teacher",
+  "text": "Ruler! It's a ruler."
+ },
+ {
+  "voice": "tr",
+  "text": "Cetvel! Bu bir cetvel."
+ },
+ {
+  "voice": "alya",
+  "text": "It's a teacher."
+ },
+ {
+  "voice": "teacher",
+  "text": "Teacher! It's a teacher."
+ },
+ {
+  "voice": "tr",
+  "text": "Öğretmen! Bu bir öğretmen."
+ },
+ {
+  "voice": "alya",
+  "text": "It's a television."
+ },
+ {
+  "voice": "teacher",
+  "text": "Television! It's a television."
+ },
+ {
+  "voice": "tr",
+  "text": "Televizyon! Bu bir televizyon."
+ },
+ {
+  "voice": "alya",
+  "text": "It's a whiteboard."
+ },
+ {
+  "voice": "teacher",
+  "text": "Whiteboard! It's a whiteboard."
+ },
+ {
+  "voice": "tr",
+  "text": "Beyaz tahta! Bu bir beyaz tahta."
+ },
+ {
+  "voice": "alya",
+  "text": "It's an alien."
+ },
+ {
+  "voice": "teacher",
+  "text": "Alien! It's an alien."
+ },
+ {
+  "voice": "tr",
+  "text": "Uzaylı! Bu bir uzaylı."
+ },
+ {
+  "voice": "alya",
+  "text": "It's a camera."
+ },
+ {
+  "voice": "teacher",
+  "text": "Camera! It's a camera."
+ },
+ {
+  "voice": "tr",
+  "text": "Fotoğraf makinesi! Bu bir fotoğraf makinesi."
+ },
+ {
+  "voice": "alya",
+  "text": "It's a board game."
+ },
+ {
+  "voice": "teacher",
+  "text": "Board game! It's a board game."
+ },
+ {
+  "voice": "tr",
+  "text": "Kutu oyunu! Bu bir kutu oyunu."
+ },
+ {
+  "voice": "alya",
+  "text": "It's a kite."
+ },
+ {
+  "voice": "teacher",
+  "text": "Kite! It's a kite."
+ },
+ {
+  "voice": "tr",
+  "text": "Uçurtma! Bu bir uçurtma."
+ },
+ {
+  "voice": "alya",
+  "text": "It's a lorry."
+ },
+ {
+  "voice": "teacher",
+  "text": "Lorry! It's a lorry."
+ },
+ {
+  "voice": "tr",
+  "text": "Kamyon! Bu bir kamyon."
+ },
+ {
+  "voice": "alya",
+  "text": "It's a robot."
+ },
+ {
+  "voice": "teacher",
+  "text": "Robot! It's a robot."
+ },
+ {
+  "voice": "tr",
+  "text": "Robot! Bu bir robot."
+ },
+ {
+  "voice": "alya",
+  "text": "It's a tablet."
+ },
+ {
+  "voice": "teacher",
+  "text": "Tablet! It's a tablet."
+ },
+ {
+  "voice": "tr",
+  "text": "Tablet! Bu bir tablet."
+ },
+ {
+  "voice": "alya",
+  "text": "It's a watch."
+ },
+ {
+  "voice": "teacher",
+  "text": "Watch! It's a watch."
+ },
+ {
+  "voice": "tr",
+  "text": "Kol saati! Bu bir kol saati."
+ },
+ {
+  "voice": "alya",
+  "text": "It's a teddy bear."
+ },
+ {
+  "voice": "teacher",
+  "text": "Teddy bear! It's a teddy bear."
+ },
+ {
+  "voice": "tr",
+  "text": "Oyuncak ayı! Bu bir oyuncak ayı."
+ },
+ {
+  "voice": "teacher",
+  "text": "Clock! It's a clock."
+ },
+ {
+  "voice": "tr",
+  "text": "Duvar saati! Bu bir duvar saati."
+ },
+ {
+  "voice": "alya",
+  "text": "It's a lamp."
+ },
+ {
+  "voice": "teacher",
+  "text": "Lamp! It's a lamp."
+ },
+ {
+  "voice": "tr",
+  "text": "Lamba! Bu bir lamba."
+ },
+ {
+  "voice": "alya",
+  "text": "It's a mat."
+ },
+ {
+  "voice": "teacher",
+  "text": "Mat! It's a mat."
+ },
+ {
+  "voice": "tr",
+  "text": "Paspas! Bu bir paspas."
+ },
+ {
+  "voice": "alya",
+  "text": "It's a mirror."
+ },
+ {
+  "voice": "teacher",
+  "text": "Mirror! It's a mirror."
+ },
+ {
+  "voice": "tr",
+  "text": "Ayna! Bu bir ayna."
+ },
+ {
+  "voice": "teacher",
+  "text": "Phone! It's a phone."
+ },
+ {
+  "voice": "tr",
+  "text": "Telefon! Bu bir telefon."
+ },
+ {
+  "voice": "teacher",
+  "text": "Sofa! It's a sofa."
+ },
+ {
+  "voice": "tr",
+  "text": "Kanepe! Bu bir kanepe."
+ },
+ {
+  "voice": "alya",
+  "text": "It's a pen."
+ },
+ {
+  "voice": "teacher",
+  "text": "Pen! It's a pen."
+ },
+ {
+  "voice": "tr",
+  "text": "Kalem! Bu bir kalem."
+ },
+ {
+  "voice": "alya",
+  "text": "It's a book."
+ },
+ {
+  "voice": "teacher",
+  "text": "Book! It's a book."
+ },
+ {
+  "voice": "tr",
+  "text": "Kitap! Bu bir kitap."
+ },
+ {
+  "voice": "teacher",
+  "text": "The cat is hiding! Can you find him?"
+ },
+ {
+  "voice": "tr",
+  "text": "Kedi saklanıyor! Onu bulabilir misin?"
+ },
+ {
+  "voice": "teacher",
+  "text": "Use in, on and under."
+ },
+ {
+  "voice": "teacher",
+  "text": "in"
+ },
+ {
+  "voice": "teacher",
+  "text": "on"
+ },
+ {
+  "voice": "tr",
+  "text": "ve"
+ },
+ {
+  "voice": "teacher",
+  "text": "under"
+ },
+ {
+  "voice": "tr",
+  "text": "kullan."
+ },
+ {
+  "voice": "teacher",
+  "text": "In, On, Under"
+ },
+ {
+  "voice": "tr",
+  "text": "İçinde, Üstünde, Altında"
+ },
+ {
+  "voice": "teacher",
+  "text": "Where's the Cat?"
+ },
+ {
+  "voice": "tr",
+  "text": "Kedi Nerede?"
+ },
+ {
+  "voice": "teacher",
+  "text": "Hide the Cat"
+ },
+ {
+  "voice": "tr",
+  "text": "Kediyi Sakla"
+ },
+ {
+  "voice": "teacher",
+  "text": "You Ask!"
+ },
+ {
+  "voice": "tr",
+  "text": "Sen Sor!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Let's hide the cat. Listen to me!"
+ },
+ {
+  "voice": "tr",
+  "text": "Hadi kediyi saklayalım. Beni dinle!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Drag the cat to the right place."
+ },
+ {
+  "voice": "tr",
+  "text": "Kediyi doğru yere sürükle."
+ },
+ {
+  "voice": "teacher",
+  "text": "It's your turn. Ask me a question!"
+ },
+ {
+  "voice": "tr",
+  "text": "Sıra sende. Bana bir soru sor!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Start with Where."
+ },
+ {
+  "voice": "teacher",
+  "text": "Where"
+ },
+ {
+  "voice": "tr",
+  "text": "ile başla."
+ },
+ {
+  "voice": "tr",
+  "text": "içinde"
+ },
+ {
+  "voice": "teacher",
+  "text": "The cat is in the box."
+ },
+ {
+  "voice": "tr",
+  "text": "Kedi kutunun içinde."
+ },
+ {
+  "voice": "alya",
+  "text": "in"
+ },
+ {
+  "voice": "tr",
+  "text": "üstünde"
+ },
+ {
+  "voice": "teacher",
+  "text": "The cat is on the table."
+ },
+ {
+  "voice": "tr",
+  "text": "Kedi masanın üstünde."
+ },
+ {
+  "voice": "alya",
+  "text": "on"
+ },
+ {
+  "voice": "tr",
+  "text": "altında"
+ },
+ {
+  "voice": "teacher",
+  "text": "The cat is under the table."
+ },
+ {
+  "voice": "tr",
+  "text": "Kedi masanın altında."
+ },
+ {
+  "voice": "alya",
+  "text": "under"
+ },
+ {
+  "voice": "teacher",
+  "text": "Where's the cat?"
+ },
+ {
+  "voice": "tr",
+  "text": "Kedi nerede?"
+ },
+ {
+  "voice": "alya",
+  "text": "It's under the table."
+ },
+ {
+  "voice": "alya",
+  "text": "It's on the table."
+ },
+ {
+  "voice": "alya",
+  "text": "It's in the box."
+ },
+ {
+  "voice": "teacher",
+  "text": "Look at the cat. Is it in, on or under?"
+ },
+ {
+  "voice": "tr",
+  "text": "Kediye bak. İçinde mi, üstünde mi, altında mı?"
+ },
+ {
+  "voice": "alya",
+  "text": "It's on the chair."
+ },
+ {
+  "voice": "alya",
+  "text": "It's under the chair."
+ },
+ {
+  "voice": "alya",
+  "text": "It's on the sofa."
+ },
+ {
+  "voice": "alya",
+  "text": "It's on the bed."
+ },
+ {
+  "voice": "teacher",
+  "text": "Put the cat under the table!"
+ },
+ {
+  "voice": "tr",
+  "text": "Kediyi masanın altına koy!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Put the cat in the box!"
+ },
+ {
+  "voice": "tr",
+  "text": "Kediyi kutunun içine koy!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Put the cat on the chair!"
+ },
+ {
+  "voice": "tr",
+  "text": "Kediyi sandalyenin üstüne koy!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Put the cat on the table!"
+ },
+ {
+  "voice": "tr",
+  "text": "Kediyi masanın üstüne koy!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Put the cat under the chair!"
+ },
+ {
+  "voice": "tr",
+  "text": "Kediyi sandalyenin altına koy!"
+ },
+ {
+  "voice": "teacher",
+  "text": "It's on the bed!"
+ },
+ {
+  "voice": "tr",
+  "text": "Yatağın üstünde!"
+ },
+ {
+  "voice": "teacher",
+  "text": "It's under the chair!"
+ },
+ {
+  "voice": "tr",
+  "text": "Sandalyenin altında!"
+ },
+ {
+  "voice": "teacher",
+  "text": "It's in the box!"
+ },
+ {
+  "voice": "tr",
+  "text": "Kutunun içinde!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Welcome to the classroom, detective!"
+ },
+ {
+  "voice": "tr",
+  "text": "Sınıfa hoş geldin dedektif!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Look, count and tell me."
+ },
+ {
+  "voice": "tr",
+  "text": "Bak, say ve bana söyle."
+ },
+ {
+  "voice": "teacher",
+  "text": "In the Classroom"
+ },
+ {
+  "voice": "tr",
+  "text": "Sınıfta"
+ },
+ {
+  "voice": "teacher",
+  "text": "Number Balloons"
+ },
+ {
+  "voice": "tr",
+  "text": "Sayı Balonları"
+ },
+ {
+  "voice": "teacher",
+  "text": "How Many?"
+ },
+ {
+  "voice": "tr",
+  "text": "Kaç Tane?"
+ },
+ {
+  "voice": "teacher",
+  "text": "Is There...?"
+ },
+ {
+  "voice": "tr",
+  "text": "Var mı?"
+ },
+ {
+  "voice": "teacher",
+  "text": "Find the Differences"
+ },
+ {
+  "voice": "tr",
+  "text": "Farkları Bul"
+ },
+ {
+  "voice": "teacher",
+  "text": "Tap the things. Then repeat after me!"
+ },
+ {
+  "voice": "tr",
+  "text": "Eşyalara dokun. Sonra benden sonra tekrar et!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Look at the pictures. What is not in picture two?"
+ },
+ {
+  "voice": "tr",
+  "text": "Resimlere bak. İkinci resimde ne yok?"
+ },
+ {
+  "voice": "teacher",
+  "text": "Look again. It is in picture two."
+ },
+ {
+  "voice": "tr",
+  "text": "Tekrar bak. O, ikinci resimde var."
+ },
+ {
+  "voice": "teacher",
+  "text": "Pop number eleven!"
+ },
+ {
+  "voice": "tr",
+  "text": "on bir numaralı balonu patlat!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Pop number twelve!"
+ },
+ {
+  "voice": "tr",
+  "text": "on iki numaralı balonu patlat!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Pop number thirteen!"
+ },
+ {
+  "voice": "tr",
+  "text": "on üç numaralı balonu patlat!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Pop number fourteen!"
+ },
+ {
+  "voice": "tr",
+  "text": "on dört numaralı balonu patlat!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Pop number fifteen!"
+ },
+ {
+  "voice": "tr",
+  "text": "on beş numaralı balonu patlat!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Pop number sixteen!"
+ },
+ {
+  "voice": "tr",
+  "text": "on altı numaralı balonu patlat!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Pop number seventeen!"
+ },
+ {
+  "voice": "tr",
+  "text": "on yedi numaralı balonu patlat!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Pop number eighteen!"
+ },
+ {
+  "voice": "tr",
+  "text": "on sekiz numaralı balonu patlat!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Pop number nineteen!"
+ },
+ {
+  "voice": "tr",
+  "text": "on dokuz numaralı balonu patlat!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Pop number twenty!"
+ },
+ {
+  "voice": "tr",
+  "text": "yirmi numaralı balonu patlat!"
+ },
+ {
+  "voice": "teacher",
+  "text": "How many pens are there?"
+ },
+ {
+  "voice": "tr",
+  "text": "Kaç tane kalem var?"
+ },
+ {
+  "voice": "alya",
+  "text": "There are eleven."
+ },
+ {
+  "voice": "alya",
+  "text": "There are twelve."
+ },
+ {
+  "voice": "alya",
+  "text": "There are thirteen."
+ },
+ {
+  "voice": "teacher",
+  "text": "Let's count together. Slowly!"
+ },
+ {
+  "voice": "tr",
+  "text": "Birlikte sayalım. Yavaş yavaş!"
+ },
+ {
+  "voice": "teacher",
+  "text": "How many rulers are there?"
+ },
+ {
+  "voice": "tr",
+  "text": "Kaç tane cetvel var?"
+ },
+ {
+  "voice": "alya",
+  "text": "There are fifteen."
+ },
+ {
+  "voice": "teacher",
+  "text": "How many desks are there?"
+ },
+ {
+  "voice": "tr",
+  "text": "Kaç tane sıra var?"
+ },
+ {
+  "voice": "alya",
+  "text": "There are twenty."
+ },
+ {
+  "voice": "teacher",
+  "text": "How many books are there?"
+ },
+ {
+  "voice": "tr",
+  "text": "Kaç tane kitap var?"
+ },
+ {
+  "voice": "alya",
+  "text": "There are fourteen."
+ },
+ {
+  "voice": "alya",
+  "text": "There are sixteen."
+ },
+ {
+  "voice": "teacher",
+  "text": "How many computers are there?"
+ },
+ {
+  "voice": "tr",
+  "text": "Kaç tane bilgisayar var?"
+ },
+ {
+  "voice": "alya",
+  "text": "There is one computer."
+ },
+ {
+  "voice": "alya",
+  "text": "There are two."
+ },
+ {
+  "voice": "alya",
+  "text": "Yes, there is."
+ },
+ {
+  "voice": "alya",
+  "text": "No, there isn't."
+ },
+ {
+  "voice": "alya",
+  "text": "Yes, there are."
+ },
+ {
+  "voice": "alya",
+  "text": "No, there aren't."
+ },
+ {
+  "voice": "teacher",
+  "text": "Is there a ruler on the desk?"
+ },
+ {
+  "voice": "tr",
+  "text": "Sıranın üstünde cetvel var mı?"
+ },
+ {
+  "voice": "teacher",
+  "text": "Look at the picture carefully."
+ },
+ {
+  "voice": "tr",
+  "text": "Resme dikkatli bak."
+ },
+ {
+  "voice": "teacher",
+  "text": "Is there a whiteboard?"
+ },
+ {
+  "voice": "tr",
+  "text": "Beyaz tahta var mı?"
+ },
+ {
+  "voice": "teacher",
+  "text": "A whiteboard is white. Can you see it?"
+ },
+ {
+  "voice": "tr",
+  "text": "Beyaz tahtanın rengi beyaz. Onu görüyor musun?"
+ },
+ {
+  "voice": "teacher",
+  "text": "Is there a computer on the desk?"
+ },
+ {
+  "voice": "tr",
+  "text": "Sıranın üstünde bilgisayar var mı?"
+ },
+ {
+  "voice": "teacher",
+  "text": "Are there fifteen pens on the desk?"
+ },
+ {
+  "voice": "tr",
+  "text": "Sıranın üstünde on beş kalem var mı?"
+ },
+ {
+  "voice": "teacher",
+  "text": "Count the pens."
+ },
+ {
+  "voice": "tr",
+  "text": "Kalemleri say."
+ },
+ {
+  "voice": "teacher",
+  "text": "Are there books under the chair?"
+ },
+ {
+  "voice": "tr",
+  "text": "Sandalyenin altında kitap var mı?"
+ },
+ {
+  "voice": "teacher",
+  "text": "Look at the book. Is it on or under the chair?"
+ },
+ {
+  "voice": "tr",
+  "text": "Kitaba bak. Sandalyenin üstünde mi, altında mı?"
+ },
+ {
+  "voice": "teacher",
+  "text": "There isn't a board in picture two."
+ },
+ {
+  "voice": "tr",
+  "text": "İkinci resimde tahta yok."
+ },
+ {
+  "voice": "teacher",
+  "text": "There isn't a bookcase in picture two."
+ },
+ {
+  "voice": "tr",
+  "text": "İkinci resimde kitaplık yok."
+ },
+ {
+  "voice": "teacher",
+  "text": "There isn't a cupboard in picture two."
+ },
+ {
+  "voice": "tr",
+  "text": "İkinci resimde dolap yok."
+ },
+ {
+  "voice": "teacher",
+  "text": "There isn't a desk in picture two."
+ },
+ {
+  "voice": "tr",
+  "text": "İkinci resimde sıra yok."
+ },
+ {
+  "voice": "teacher",
+  "text": "There isn't a computer in picture two."
+ },
+ {
+  "voice": "tr",
+  "text": "İkinci resimde bilgisayar yok."
+ },
+ {
+  "voice": "teacher",
+  "text": "There isn't a television in picture two."
+ },
+ {
+  "voice": "tr",
+  "text": "İkinci resimde televizyon yok."
+ },
+ {
+  "voice": "alya",
+  "text": "There isn't a board."
+ },
+ {
+  "voice": "alya",
+  "text": "There isn't a bookcase."
+ },
+ {
+  "voice": "alya",
+  "text": "There isn't a cupboard."
+ },
+ {
+  "voice": "alya",
+  "text": "There isn't a desk."
+ },
+ {
+  "voice": "alya",
+  "text": "There isn't a computer."
+ },
+ {
+  "voice": "alya",
+  "text": "There isn't a television."
+ },
+ {
+  "voice": "teacher",
+  "text": "Oh no! The toys are lost."
+ },
+ {
+  "voice": "tr",
+  "text": "Eyvah! Oyuncaklar kayıp."
+ },
+ {
+  "voice": "teacher",
+  "text": "Find the toys and their owners!"
+ },
+ {
+  "voice": "tr",
+  "text": "Oyuncakları ve sahiplerini bul!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Toy Names"
+ },
+ {
+  "voice": "tr",
+  "text": "Oyuncak İsimleri"
+ },
+ {
+  "voice": "teacher",
+  "text": "Sound Balloons"
+ },
+ {
+  "voice": "tr",
+  "text": "Ses Balonları"
+ },
+ {
+  "voice": "teacher",
+  "text": "Photo Time"
+ },
+ {
+  "voice": "tr",
+  "text": "Fotoğraf Zamanı"
+ },
+ {
+  "voice": "teacher",
+  "text": "This, That, These, Those"
+ },
+ {
+  "voice": "tr",
+  "text": "Bu, Şu, Bunlar, Şunlar"
+ },
+ {
+  "voice": "teacher",
+  "text": "Whose Is It?"
+ },
+ {
+  "voice": "tr",
+  "text": "Bu Kimin?"
+ },
+ {
+  "voice": "teacher",
+  "text": "Answer Me"
+ },
+ {
+  "voice": "tr",
+  "text": "Bana Cevap Ver"
+ },
+ {
+  "voice": "teacher",
+  "text": "Memory Cards"
+ },
+ {
+  "voice": "tr",
+  "text": "Hafıza Kartları"
+ },
+ {
+  "voice": "teacher",
+  "text": "Tap a toy. Then repeat after me!"
+ },
+ {
+  "voice": "tr",
+  "text": "Bir oyuncağa dokun. Sonra benden sonra tekrar et!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Near: this, these."
+ },
+ {
+  "voice": "tr",
+  "text": "Yakında:"
+ },
+ {
+  "voice": "teacher",
+  "text": "this"
+ },
+ {
+  "voice": "tr",
+  "text": "bu,"
+ },
+ {
+  "voice": "teacher",
+  "text": "these"
+ },
+ {
+  "voice": "tr",
+  "text": "bunlar."
+ },
+ {
+  "voice": "teacher",
+  "text": "Far away: that, those."
+ },
+ {
+  "voice": "tr",
+  "text": "Uzakta:"
+ },
+ {
+  "voice": "teacher",
+  "text": "that"
+ },
+ {
+  "voice": "tr",
+  "text": "şu,"
+ },
+ {
+  "voice": "teacher",
+  "text": "those"
+ },
+ {
+  "voice": "tr",
+  "text": "şunlar."
+ },
+ {
+  "voice": "teacher",
+  "text": "Listen to me and take a photo!"
+ },
+ {
+  "voice": "tr",
+  "text": "Beni dinle ve fotoğraf çek!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Near or far? One or many?"
+ },
+ {
+  "voice": "tr",
+  "text": "Yakın mı, uzak mı? Bir tane mi, çok mu?"
+ },
+ {
+  "voice": "teacher",
+  "text": "Listen. Give the toys to my friends!"
+ },
+ {
+  "voice": "tr",
+  "text": "Dinle. Oyuncakları sahiplerine ver!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Drag the toy to the right person."
+ },
+ {
+  "voice": "tr",
+  "text": "Oyuncağı doğru kişiye sürükle."
+ },
+ {
+  "voice": "teacher",
+  "text": "Find the pairs!"
+ },
+ {
+  "voice": "tr",
+  "text": "Eşleri bul!"
+ },
+ {
+  "voice": "teacher",
+  "text": "This is a robot. Take a photo!"
+ },
+ {
+  "voice": "tr",
+  "text": "Bu bir robot. Fotoğrafını çek!"
+ },
+ {
+  "voice": "alya",
+  "text": "This is a robot."
+ },
+ {
+  "voice": "teacher",
+  "text": "That is a robot. Take a photo!"
+ },
+ {
+  "voice": "tr",
+  "text": "Şu bir robot. Fotoğrafını çek!"
+ },
+ {
+  "voice": "alya",
+  "text": "That is a robot."
+ },
+ {
+  "voice": "teacher",
+  "text": "These are robots. Take a photo!"
+ },
+ {
+  "voice": "tr",
+  "text": "Bunlar robot. Fotoğraflarını çek!"
+ },
+ {
+  "voice": "alya",
+  "text": "These are robots."
+ },
+ {
+  "voice": "teacher",
+  "text": "Those are robots. Take a photo!"
+ },
+ {
+  "voice": "tr",
+  "text": "Şunlar robot. Fotoğraflarını çek!"
+ },
+ {
+  "voice": "alya",
+  "text": "Those are robots."
+ },
+ {
+  "voice": "teacher",
+  "text": "This is a kite. Take a photo!"
+ },
+ {
+  "voice": "tr",
+  "text": "Bu bir uçurtma. Fotoğrafını çek!"
+ },
+ {
+  "voice": "alya",
+  "text": "This is a kite."
+ },
+ {
+  "voice": "teacher",
+  "text": "That is a kite. Take a photo!"
+ },
+ {
+  "voice": "tr",
+  "text": "Şu bir uçurtma. Fotoğrafını çek!"
+ },
+ {
+  "voice": "alya",
+  "text": "That is a kite."
+ },
+ {
+  "voice": "teacher",
+  "text": "These are kites. Take a photo!"
+ },
+ {
+  "voice": "tr",
+  "text": "Bunlar uçurtma. Fotoğraflarını çek!"
+ },
+ {
+  "voice": "alya",
+  "text": "These are kites."
+ },
+ {
+  "voice": "teacher",
+  "text": "Those are kites. Take a photo!"
+ },
+ {
+  "voice": "tr",
+  "text": "Şunlar uçurtma. Fotoğraflarını çek!"
+ },
+ {
+  "voice": "alya",
+  "text": "Those are kites."
+ },
+ {
+  "voice": "teacher",
+  "text": "This is a camera. Take a photo!"
+ },
+ {
+  "voice": "tr",
+  "text": "Bu bir fotoğraf makinesi. Fotoğrafını çek!"
+ },
+ {
+  "voice": "alya",
+  "text": "This is a camera."
+ },
+ {
+  "voice": "teacher",
+  "text": "That is a camera. Take a photo!"
+ },
+ {
+  "voice": "tr",
+  "text": "Şu bir fotoğraf makinesi. Fotoğrafını çek!"
+ },
+ {
+  "voice": "alya",
+  "text": "That is a camera."
+ },
+ {
+  "voice": "teacher",
+  "text": "These are cameras. Take a photo!"
+ },
+ {
+  "voice": "tr",
+  "text": "Bunlar fotoğraf makinesi. Fotoğraflarını çek!"
+ },
+ {
+  "voice": "alya",
+  "text": "These are cameras."
+ },
+ {
+  "voice": "teacher",
+  "text": "Those are cameras. Take a photo!"
+ },
+ {
+  "voice": "tr",
+  "text": "Şunlar fotoğraf makinesi. Fotoğraflarını çek!"
+ },
+ {
+  "voice": "alya",
+  "text": "Those are cameras."
+ },
+ {
+  "voice": "teacher",
+  "text": "This is a teddy bear. Take a photo!"
+ },
+ {
+  "voice": "tr",
+  "text": "Bu bir oyuncak ayı. Fotoğrafını çek!"
+ },
+ {
+  "voice": "alya",
+  "text": "This is a teddy bear."
+ },
+ {
+  "voice": "teacher",
+  "text": "That is a teddy bear. Take a photo!"
+ },
+ {
+  "voice": "tr",
+  "text": "Şu bir oyuncak ayı. Fotoğrafını çek!"
+ },
+ {
+  "voice": "alya",
+  "text": "That is a teddy bear."
+ },
+ {
+  "voice": "teacher",
+  "text": "These are teddy bears. Take a photo!"
+ },
+ {
+  "voice": "tr",
+  "text": "Bunlar oyuncak ayı. Fotoğraflarını çek!"
+ },
+ {
+  "voice": "alya",
+  "text": "These are teddy bears."
+ },
+ {
+  "voice": "teacher",
+  "text": "Those are teddy bears. Take a photo!"
+ },
+ {
+  "voice": "tr",
+  "text": "Şunlar oyuncak ayı. Fotoğraflarını çek!"
+ },
+ {
+  "voice": "alya",
+  "text": "Those are teddy bears."
+ },
+ {
+  "voice": "teacher",
+  "text": "This is an alien. Take a photo!"
+ },
+ {
+  "voice": "tr",
+  "text": "Bu bir uzaylı. Fotoğrafını çek!"
+ },
+ {
+  "voice": "alya",
+  "text": "This is an alien."
+ },
+ {
+  "voice": "teacher",
+  "text": "That is an alien. Take a photo!"
+ },
+ {
+  "voice": "tr",
+  "text": "Şu bir uzaylı. Fotoğrafını çek!"
+ },
+ {
+  "voice": "alya",
+  "text": "That is an alien."
+ },
+ {
+  "voice": "teacher",
+  "text": "These are aliens. Take a photo!"
+ },
+ {
+  "voice": "tr",
+  "text": "Bunlar uzaylı. Fotoğraflarını çek!"
+ },
+ {
+  "voice": "alya",
+  "text": "These are aliens."
+ },
+ {
+  "voice": "teacher",
+  "text": "Those are aliens. Take a photo!"
+ },
+ {
+  "voice": "tr",
+  "text": "Şunlar uzaylı. Fotoğraflarını çek!"
+ },
+ {
+  "voice": "alya",
+  "text": "Those are aliens."
+ },
+ {
+  "voice": "teacher",
+  "text": "This is a tablet. Take a photo!"
+ },
+ {
+  "voice": "tr",
+  "text": "Bu bir tablet. Fotoğrafını çek!"
+ },
+ {
+  "voice": "alya",
+  "text": "This is a tablet."
+ },
+ {
+  "voice": "teacher",
+  "text": "That is a tablet. Take a photo!"
+ },
+ {
+  "voice": "tr",
+  "text": "Şu bir tablet. Fotoğrafını çek!"
+ },
+ {
+  "voice": "alya",
+  "text": "That is a tablet."
+ },
+ {
+  "voice": "teacher",
+  "text": "These are tablets. Take a photo!"
+ },
+ {
+  "voice": "tr",
+  "text": "Bunlar tablet. Fotoğraflarını çek!"
+ },
+ {
+  "voice": "alya",
+  "text": "These are tablets."
+ },
+ {
+  "voice": "teacher",
+  "text": "Those are tablets. Take a photo!"
+ },
+ {
+  "voice": "tr",
+  "text": "Şunlar tablet. Fotoğraflarını çek!"
+ },
+ {
+  "voice": "alya",
+  "text": "Those are tablets."
+ },
+ {
+  "voice": "teacher",
+  "text": "Which word is right?"
+ },
+ {
+  "voice": "tr",
+  "text": "Hangi kelime doğru?"
+ },
+ {
+  "voice": "teacher",
+  "text": "Near. This or these?"
+ },
+ {
+  "voice": "tr",
+  "text": "Yakında."
+ },
+ {
+  "voice": "tr",
+  "text": "mi,"
+ },
+ {
+  "voice": "tr",
+  "text": "mi?"
+ },
+ {
+  "voice": "teacher",
+  "text": "Far away. That or those?"
+ },
+ {
+  "voice": "tr",
+  "text": "Uzakta."
+ },
+ {
+  "voice": "tr",
+  "text": "mu?"
+ },
+ {
+  "voice": "alya",
+  "text": "This is a watch."
+ },
+ {
+  "voice": "alya",
+  "text": "It's Mia's."
+ },
+ {
+  "voice": "teacher",
+  "text": "Whose is this kite? It's Mia's. Give it to Mia!"
+ },
+ {
+  "voice": "tr",
+  "text": "Bu uçurtma kimin? Mia’nın. Ona ver!"
+ },
+ {
+  "voice": "alya",
+  "text": "It's Leo's."
+ },
+ {
+  "voice": "teacher",
+  "text": "Whose is this robot? It's Leo's. Give it to Leo!"
+ },
+ {
+  "voice": "tr",
+  "text": "Bu robot kimin? Leo’nun. Ona ver!"
+ },
+ {
+  "voice": "alya",
+  "text": "It's Alya's."
+ },
+ {
+  "voice": "teacher",
+  "text": "Whose is this teddy bear? It's Alya's. Give it to Alya!"
+ },
+ {
+  "voice": "tr",
+  "text": "Bu oyuncak ayı kimin? Alya’nın. Ona ver!"
+ },
+ {
+  "voice": "alya",
+  "text": "It's Teacher's."
+ },
+ {
+  "voice": "teacher",
+  "text": "Whose is this camera? It's Teacher's. Give it to me!"
+ },
+ {
+  "voice": "tr",
+  "text": "Bu fotoğraf makinesi kimin? Öğretmenin. Ona ver!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Whose is this lorry? It's Leo's. Give it to Leo!"
+ },
+ {
+  "voice": "tr",
+  "text": "Bu kamyon kimin? Leo’nun. Ona ver!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Whose is this watch? It's Mia's. Give it to Mia!"
+ },
+ {
+  "voice": "tr",
+  "text": "Bu kol saati kimin? Mia’nın. Ona ver!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Whose is this kite?"
+ },
+ {
+  "voice": "tr",
+  "text": "Bu uçurtma kimin?"
+ },
+ {
+  "voice": "teacher",
+  "text": "Who is in the picture?"
+ },
+ {
+  "voice": "tr",
+  "text": "Resimde kim var?"
+ },
+ {
+  "voice": "teacher",
+  "text": "Whose is this robot?"
+ },
+ {
+  "voice": "tr",
+  "text": "Bu robot kimin?"
+ },
+ {
+  "voice": "teacher",
+  "text": "Whose is this teddy bear?"
+ },
+ {
+  "voice": "tr",
+  "text": "Bu oyuncak ayı kimin?"
+ },
+ {
+  "voice": "teacher",
+  "text": "Whose are these books?"
+ },
+ {
+  "voice": "tr",
+  "text": "Bunlar kimin?"
+ },
+ {
+  "voice": "alya",
+  "text": "They're Teacher's."
+ },
+ {
+  "voice": "alya",
+  "text": "They're Alya's."
+ },
+ {
+  "voice": "alya",
+  "text": "They're Leo's."
+ },
+ {
+  "voice": "teacher",
+  "text": "Whose are these tablets?"
+ },
+ {
+  "voice": "alya",
+  "text": "They're Mia's."
+ },
+ {
+  "voice": "teacher",
+  "text": "Find the whale!"
+ },
+ {
+  "voice": "tr",
+  "text": "Balina nerede? Onu bul!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Whale. Repeat after me: whale!"
+ },
+ {
+  "voice": "teacher",
+  "text": "whale!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Find the bee!"
+ },
+ {
+  "voice": "tr",
+  "text": "Arı nerede? Onu bul!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Bee. Repeat after me: bee!"
+ },
+ {
+  "voice": "teacher",
+  "text": "bee!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Find the kite!"
+ },
+ {
+  "voice": "tr",
+  "text": "Uçurtma nerede? Onu bul!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Kite. Repeat after me: kite!"
+ },
+ {
+  "voice": "teacher",
+  "text": "kite!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Find the nose!"
+ },
+ {
+  "voice": "tr",
+  "text": "Burun nerede? Onu bul!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Nose. Repeat after me: nose!"
+ },
+ {
+  "voice": "teacher",
+  "text": "nose!"
+ },
+ {
+  "voice": "teacher",
+  "text": "This is your dream house! It is empty."
+ },
+ {
+  "voice": "tr",
+  "text": "Bu senin rüya evin! İçi boş."
+ },
+ {
+  "voice": "teacher",
+  "text": "Let's put things in the rooms!"
+ },
+ {
+  "voice": "tr",
+  "text": "Hadi odalara eşya koyalım!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Things at Home"
+ },
+ {
+  "voice": "tr",
+  "text": "Evdeki Eşyalar"
+ },
+ {
+  "voice": "teacher",
+  "text": "Put It in the Room"
+ },
+ {
+  "voice": "tr",
+  "text": "Odaya Koy"
+ },
+ {
+  "voice": "teacher",
+  "text": "Whose Shoes?"
+ },
+ {
+  "voice": "tr",
+  "text": "Kimin Ayakkabıları?"
+ },
+ {
+  "voice": "teacher",
+  "text": "Which Ones?"
+ },
+ {
+  "voice": "tr",
+  "text": "Hangileri?"
+ },
+ {
+  "voice": "teacher",
+  "text": "Hello, Teacher!"
+ },
+ {
+  "voice": "tr",
+  "text": "Alo, Öğretmenim!"
+ },
+ {
+  "voice": "teacher",
+  "text": "My Dream House"
+ },
+ {
+  "voice": "tr",
+  "text": "Benim Rüya Evim"
+ },
+ {
+  "voice": "teacher",
+  "text": "Find the thing, then look at the colour of the room."
+ },
+ {
+  "voice": "tr",
+  "text": "Eşyayı bul, sonra odanın rengine bak."
+ },
+ {
+  "voice": "teacher",
+  "text": "Listen to Alya. Give the shoes to the right person!"
+ },
+ {
+  "voice": "tr",
+  "text": "Alya’yı dinle. Ayakkabıları doğru kişiye ver!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Mine is Alya. Yours is Teacher. His is Leo. Hers is Mia."
+ },
+ {
+  "voice": "teacher",
+  "text": "mine"
+ },
+ {
+  "voice": "tr",
+  "text": "benim,"
+ },
+ {
+  "voice": "teacher",
+  "text": "yours"
+ },
+ {
+  "voice": "tr",
+  "text": "senin,"
+ },
+ {
+  "voice": "teacher",
+  "text": "his"
+ },
+ {
+  "voice": "tr",
+  "text": "onun, Leo için."
+ },
+ {
+  "voice": "teacher",
+  "text": "hers"
+ },
+ {
+  "voice": "tr",
+  "text": "onun, Mia için."
+ },
+ {
+  "voice": "teacher",
+  "text": "Hello! I am on the phone. I cannot see your house. Answer my questions!"
+ },
+ {
+  "voice": "tr",
+  "text": "Alo! Telefondayım. Evini göremiyorum. Sorularımı cevapla!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Make your dream house! Drag the things into the rooms."
+ },
+ {
+  "voice": "tr",
+  "text": "Rüya evini yap! Eşyaları odalara sürükle."
+ },
+ {
+  "voice": "teacher",
+  "text": "Your house is beautiful!"
+ },
+ {
+  "voice": "tr",
+  "text": "Evin çok güzel!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Put three or more things in your house first."
+ },
+ {
+  "voice": "tr",
+  "text": "Önce evine en az üç eşya koy."
+ },
+ {
+  "voice": "teacher",
+  "text": "Put the sofa in the yellow room!"
+ },
+ {
+  "voice": "tr",
+  "text": "Kanepe: sarı odaya koy!"
+ },
+ {
+  "voice": "alya",
+  "text": "The sofa is in the yellow room."
+ },
+ {
+  "voice": "teacher",
+  "text": "Put the lamp in the purple room!"
+ },
+ {
+  "voice": "tr",
+  "text": "Lamba: mor odaya koy!"
+ },
+ {
+  "voice": "alya",
+  "text": "The lamp is in the purple room."
+ },
+ {
+  "voice": "teacher",
+  "text": "Put the mirror in the turquoise room!"
+ },
+ {
+  "voice": "tr",
+  "text": "Ayna: turkuaz odaya koy!"
+ },
+ {
+  "voice": "alya",
+  "text": "The mirror is in the turquoise room."
+ },
+ {
+  "voice": "teacher",
+  "text": "Put the clock in the pink room!"
+ },
+ {
+  "voice": "tr",
+  "text": "Duvar saati: pembe odaya koy!"
+ },
+ {
+  "voice": "alya",
+  "text": "The clock is in the pink room."
+ },
+ {
+  "voice": "teacher",
+  "text": "Put the mat in the purple room!"
+ },
+ {
+  "voice": "tr",
+  "text": "Paspas: mor odaya koy!"
+ },
+ {
+  "voice": "alya",
+  "text": "The mat is in the purple room."
+ },
+ {
+  "voice": "teacher",
+  "text": "Put the phone in the yellow room!"
+ },
+ {
+  "voice": "tr",
+  "text": "Telefon: sarı odaya koy!"
+ },
+ {
+  "voice": "alya",
+  "text": "The phone is in the yellow room."
+ },
+ {
+  "voice": "tr",
+  "text": "benim"
+ },
+ {
+  "voice": "tr",
+  "text": "senin"
+ },
+ {
+  "voice": "tr",
+  "text": "onun. Erkekler için."
+ },
+ {
+  "voice": "tr",
+  "text": "onun. Kızlar için."
+ },
+ {
+  "voice": "alya",
+  "text": "The turquoise ones are mine."
+ },
+ {
+  "voice": "teacher",
+  "text": "The turquoise ones are mine."
+ },
+ {
+  "voice": "tr",
+  "text": "Turkuaz olanlar benim."
+ },
+ {
+  "voice": "alya",
+  "text": "The lilac ones are yours."
+ },
+ {
+  "voice": "teacher",
+  "text": "The lilac ones are yours."
+ },
+ {
+  "voice": "tr",
+  "text": "Lila olanlar senin."
+ },
+ {
+  "voice": "alya",
+  "text": "The grey ones are his."
+ },
+ {
+  "voice": "teacher",
+  "text": "The grey ones are his."
+ },
+ {
+  "voice": "tr",
+  "text": "Gri olanlar Leo’nun."
+ },
+ {
+  "voice": "alya",
+  "text": "The yellow ones are hers."
+ },
+ {
+  "voice": "teacher",
+  "text": "The yellow ones are hers."
+ },
+ {
+  "voice": "tr",
+  "text": "Sarı olanlar Mia’nın."
+ },
+ {
+  "voice": "teacher",
+  "text": "Which shoes are yours, Alya?"
+ },
+ {
+  "voice": "tr",
+  "text": "Hangi ayakkabılar senin, Alya?"
+ },
+ {
+  "voice": "teacher",
+  "text": "Which shoes are mine? I am your teacher."
+ },
+ {
+  "voice": "tr",
+  "text": "Hangi ayakkabılar benim? Ben senin öğretmeninim."
+ },
+ {
+  "voice": "teacher",
+  "text": "Which shoes are Leo's?"
+ },
+ {
+  "voice": "tr",
+  "text": "Hangi ayakkabılar Leo’nun?"
+ },
+ {
+  "voice": "teacher",
+  "text": "Which shoes are Mia's?"
+ },
+ {
+  "voice": "tr",
+  "text": "Hangi ayakkabılar Mia’nın?"
+ },
+ {
+  "voice": "alya",
+  "text": "The yellow ones are his."
+ },
+ {
+  "voice": "alya",
+  "text": "The turquoise ones are his."
+ },
+ {
+  "voice": "teacher",
+  "text": "Look at the shoes and the person. What colour?"
+ },
+ {
+  "voice": "tr",
+  "text": "Ayakkabılara ve kişiye bak. Ne renk?"
+ },
+ {
+  "voice": "alya",
+  "text": "The grey ones are hers."
+ },
+ {
+  "voice": "alya",
+  "text": "The lilac ones are hers."
+ },
+ {
+  "voice": "alya",
+  "text": "The grey ones are mine."
+ },
+ {
+  "voice": "alya",
+  "text": "The yellow ones are mine."
+ },
+ {
+  "voice": "alya",
+  "text": "The turquoise ones are yours."
+ },
+ {
+  "voice": "alya",
+  "text": "The yellow ones are yours."
+ },
+ {
+  "voice": "teacher",
+  "text": "Where's the clock?"
+ },
+ {
+  "voice": "tr",
+  "text": "Duvar saati nerede?"
+ },
+ {
+  "voice": "teacher",
+  "text": "Where's the lamp?"
+ },
+ {
+  "voice": "tr",
+  "text": "Lamba nerede?"
+ },
+ {
+  "voice": "teacher",
+  "text": "Where's the mat?"
+ },
+ {
+  "voice": "tr",
+  "text": "Paspas nerede?"
+ },
+ {
+  "voice": "teacher",
+  "text": "Where's the mirror?"
+ },
+ {
+  "voice": "tr",
+  "text": "Ayna nerede?"
+ },
+ {
+  "voice": "teacher",
+  "text": "Where's the phone?"
+ },
+ {
+  "voice": "tr",
+  "text": "Telefon nerede?"
+ },
+ {
+  "voice": "teacher",
+  "text": "Where's the sofa?"
+ },
+ {
+  "voice": "tr",
+  "text": "Kanepe nerede?"
+ },
+ {
+  "voice": "alya",
+  "text": "It's in the purple room."
+ },
+ {
+  "voice": "alya",
+  "text": "It's in the turquoise room."
+ },
+ {
+  "voice": "alya",
+  "text": "It's in the yellow room."
+ },
+ {
+  "voice": "alya",
+  "text": "It's in the pink room."
+ },
+ {
+  "voice": "teacher",
+  "text": "Is there a lamp in the purple room?"
+ },
+ {
+  "voice": "tr",
+  "text": "Mor odada lamba var mı?"
+ },
+ {
+  "voice": "teacher",
+  "text": "Look at the purple room."
+ },
+ {
+  "voice": "tr",
+  "text": "Mor odaya bak."
+ },
+ {
+  "voice": "teacher",
+  "text": "Is there a sofa in the pink room?"
+ },
+ {
+  "voice": "tr",
+  "text": "Pembe odada kanepe var mı?"
+ },
+ {
+  "voice": "teacher",
+  "text": "Look at the pink room."
+ },
+ {
+  "voice": "tr",
+  "text": "Pembe odaya bak."
+ },
+ {
+  "voice": "teacher",
+  "text": "Look at the colour of the room."
+ },
+ {
+  "voice": "tr",
+  "text": "Odanın rengine bak."
+ },
+ {
+  "voice": "teacher",
+  "text": "Is there a clock in the yellow room?"
+ },
+ {
+  "voice": "tr",
+  "text": "Sarı odada duvar saati var mı?"
+ },
+ {
+  "voice": "teacher",
+  "text": "Look at the yellow room."
+ },
+ {
+  "voice": "tr",
+  "text": "Sarı odaya bak."
+ },
+ {
+  "voice": "teacher",
+  "text": "Is there a mat in the purple room?"
+ },
+ {
+  "voice": "tr",
+  "text": "Mor odada paspas var mı?"
+ },
+ {
+  "voice": "teacher",
+  "text": "Alya and Mia play against me!"
+ },
+ {
+  "voice": "tr",
+  "text": "Alya ve Mia bana karşı oynuyor!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Pass: listen. Set: make a sentence. Spike: say it!"
+ },
+ {
+  "voice": "tr",
+  "text": "Pas: dinle. Set: cümle kur. Smaç: söyle!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Are you ready? Here comes the ball!"
+ },
+ {
+  "voice": "tr",
+  "text": "Hazır mısın? Top geliyor!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Pass!"
+ },
+ {
+  "voice": "tr",
+  "text": "Pas!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Set! Make a sentence."
+ },
+ {
+  "voice": "tr",
+  "text": "Set! Cümle kur."
+ },
+ {
+  "voice": "teacher",
+  "text": "Spike! Say it!"
+ },
+ {
+  "voice": "tr",
+  "text": "Smaç! Söyle!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Oh no!"
+ },
+ {
+  "voice": "tr",
+  "text": "Eyvah!"
+ },
+ {
+  "voice": "teacher",
+  "text": "My point! Don't worry, let's play!"
+ },
+ {
+  "voice": "tr",
+  "text": "Benim sayım! Merak etme, oynayalım!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Don't worry, let's play!"
+ },
+ {
+  "voice": "tr",
+  "text": "Merak etme, oynayalım!"
+ },
+ {
+  "voice": "teacher",
+  "text": "One point for you!"
+ },
+ {
+  "voice": "tr",
+  "text": "Sana bir sayı!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Two points!"
+ },
+ {
+  "voice": "tr",
+  "text": "İki sayı!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Three points!"
+ },
+ {
+  "voice": "tr",
+  "text": "Üç sayı!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Four points! One more!"
+ },
+ {
+  "voice": "tr",
+  "text": "Dört sayı! Bir tane daha!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Five points! You win!"
+ },
+ {
+  "voice": "tr",
+  "text": "Beş sayı! Kazandın!"
+ },
+ {
+  "voice": "teacher",
+  "text": "YOU DID IT! Volleyball Champion!"
+ },
+ {
+  "voice": "tr",
+  "text": "BAŞARDIN! Voleybol Şampiyonu!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Congratulations, Alya! I am so proud of you!"
+ },
+ {
+  "voice": "tr",
+  "text": "Tebrikler, Alya! Seninle gurur duyuyorum!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Listen: bookcase!"
+ },
+ {
+  "voice": "tr",
+  "text": "Dinle:"
+ },
+ {
+  "voice": "teacher",
+  "text": "bookcase!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Listen: board!"
+ },
+ {
+  "voice": "teacher",
+  "text": "board!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Listen: cupboard!"
+ },
+ {
+  "voice": "teacher",
+  "text": "cupboard!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Listen: computer!"
+ },
+ {
+  "voice": "teacher",
+  "text": "computer!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Listen: desk!"
+ },
+ {
+  "voice": "teacher",
+  "text": "desk!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Listen: ruler!"
+ },
+ {
+  "voice": "teacher",
+  "text": "ruler!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Listen: teacher!"
+ },
+ {
+  "voice": "teacher",
+  "text": "teacher!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Listen: television!"
+ },
+ {
+  "voice": "teacher",
+  "text": "television!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Listen: whiteboard!"
+ },
+ {
+  "voice": "teacher",
+  "text": "whiteboard!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Listen: alien!"
+ },
+ {
+  "voice": "teacher",
+  "text": "alien!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Listen: camera!"
+ },
+ {
+  "voice": "teacher",
+  "text": "camera!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Listen: board game!"
+ },
+ {
+  "voice": "teacher",
+  "text": "board game!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Listen: kite!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Listen: lorry!"
+ },
+ {
+  "voice": "teacher",
+  "text": "lorry!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Listen: robot!"
+ },
+ {
+  "voice": "teacher",
+  "text": "robot!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Listen: tablet!"
+ },
+ {
+  "voice": "teacher",
+  "text": "tablet!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Listen: watch!"
+ },
+ {
+  "voice": "teacher",
+  "text": "watch!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Listen: teddy bear!"
+ },
+ {
+  "voice": "teacher",
+  "text": "teddy bear!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Listen: clock!"
+ },
+ {
+  "voice": "teacher",
+  "text": "clock!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Listen: lamp!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Listen: mat!"
+ },
+ {
+  "voice": "teacher",
+  "text": "mat!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Listen: mirror!"
+ },
+ {
+  "voice": "teacher",
+  "text": "mirror!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Listen: phone!"
+ },
+ {
+  "voice": "teacher",
+  "text": "phone!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Listen: sofa!"
+ },
+ {
+  "voice": "teacher",
+  "text": "sofa!"
+ },
+ {
+  "voice": "alya",
+  "text": "Where's the cat?"
+ },
+ {
+  "voice": "teacher",
+  "text": "Make this sentence!"
+ },
+ {
+  "voice": "tr",
+  "text": "Masanın altında."
+ },
+ {
+  "voice": "alya",
+  "text": "How many desks are there?"
+ },
+ {
+  "voice": "alya",
+  "text": "There are twelve pens."
+ },
+ {
+  "voice": "tr",
+  "text": "On iki kalem var."
+ },
+ {
+  "voice": "alya",
+  "text": "Is there a ruler?"
+ },
+ {
+  "voice": "tr",
+  "text": "Cetvel var mı?"
+ },
+ {
+  "voice": "tr",
+  "text": "Bunlar uçurtma."
+ },
+ {
+  "voice": "alya",
+  "text": "Whose is this robot?"
+ },
+ {
+  "voice": "alya",
+  "text": "It's Leo's lorry."
+ },
+ {
+  "voice": "tr",
+  "text": "Leo’nun kamyonu."
+ },
+ {
+  "voice": "tr",
+  "text": "Gri olanlar onun."
+ },
+ {
+  "voice": "alya",
+  "text": "Which shoes are yours?"
+ },
+ {
+  "voice": "tr",
+  "text": "Hangi ayakkabılar senin?"
+ },
+ {
+  "voice": "teacher",
+  "text": "Here's the answer. Tap it!"
+ },
+ {
+  "voice": "tr",
+  "text": "İşte cevap. Ona dokun!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Repeat after me!"
+ },
+ {
+  "voice": "tr",
+  "text": "Benden sonra tekrar et!"
+ },
+ {
+  "voice": "teacher",
+  "text": "You know all the words!"
+ },
+ {
+  "voice": "tr",
+  "text": "Bütün kelimeleri biliyorsun!"
+ },
+ {
+  "voice": "teacher",
+  "text": "Listen again carefully."
+ },
+ {
+  "voice": "tr",
+  "text": "Tekrar dikkatle dinle."
+ },
+ {
+  "voice": "alya",
+  "text": "mine"
+ },
+ {
+  "voice": "alya",
+  "text": "yours"
+ },
+ {
+  "voice": "alya",
+  "text": "his"
+ },
+ {
+  "voice": "alya",
+  "text": "hers"
+ }
+]
